@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="es" data-admin-access="1" style="--ink: #17151a; --cream: #fffdfd; --rose: #ed2c9b; --rose-dark: #c21878; --blush: #ed2c9b; --line: #eadfe7;"><head>
+<html lang="es" style="--ink: #17151a; --cream: #fffdfd; --rose: #ed2c9b; --rose-dark: #c21878; --blush: #ed2c9b; --line: #eadfe7;"><head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#fff0f8">
@@ -806,7 +806,7 @@ ROSADOS</div><div class="price-row"><span class="price">S/ 60.00</span></div><sm
   </form>
 </div></div></div>
 <!-- Admin panel -->
-<div class="modal-backdrop show" id="adminModal" onclick="backdropClose(event,'adminModal')"><div class="modal"><div class="modal-head"><h3>Panel de administración</h3><button class="close" onclick="closeAdmin()">×</button></div><div class="admin-shell">
+<div class="modal-backdrop" id="adminModal" onclick="backdropClose(event,'adminModal')"><div class="modal"><div class="modal-head"><h3>Panel de administración</h3><button class="close" onclick="closeAdmin()">×</button></div><div class="admin-shell">
   <div class="admin-note"><strong>Publicación compartida:</strong> configura Supabase en «Tienda y redes» para compartir catálogo, fotos, stock, logo y tipografías con todas las clientas. Sin conexión, los cambios permanecen solo en este navegador.</div>
   <div class="admin-stats"><div class="stat"><small>Productos activos</small><strong id="statProducts">28</strong></div><div class="stat"><small>Pedidos en este navegador</small><strong id="statOrders">0</strong></div><div class="stat"><small>Artículos en bolsa</small><strong id="statCart">0</strong></div></div>
   <div class="admin-tabs"><button class="" onclick="adminTab('products',this)">Productos</button><button onclick="adminTab('orders',this)" class="">Pedidos</button><button onclick="adminTab('settings',this)" class="active">Tienda y redes</button><button onclick="adminTab('design',this)" class="">Diseño de página</button><button onclick="adminTab('reviews',this)">Reseñas</button></div>
@@ -2050,7 +2050,10 @@ function downloadCloudReadyHTML(){
  if(!saveCloudConnection())return;
  const declaration="const RAIZ_CLOUD_CONFIG = Object.freeze("+JSON.stringify(activeCloudConfig)+");";
  const pattern=/const RAIZ_CLOUD_CONFIG = Object\.freeze\(\{[\s\S]*?\}\);/;
- const source="<!doctype html>\n"+document.documentElement.outerHTML;
+ const exportRoot=document.documentElement.cloneNode(true);
+ exportRoot.removeAttribute("data-admin-access");
+ exportRoot.querySelectorAll("#loginModal,#adminModal").forEach(el=>el.classList.remove("show"));
+ const source="<!doctype html>\n"+exportRoot.outerHTML;
  if(!pattern.test(source)){toast("No se encontró la configuración de nube en este HTML.");return}
  const configuredHtml=source.replace(pattern,declaration);
  const blob=new Blob([configuredHtml],{type:"text/html;charset=utf-8"});
