@@ -412,7 +412,7 @@ html[data-admin-access="1"] #adminOpenBtn{display:inline-flex!important}
   @media(max-width:900px){#productGrid{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
   @media(max-width:480px){#productGrid{grid-template-columns:repeat(2,minmax(0,1fr))!important}#productGrid .product-image{height:218.4px!important}}
  </style></head>
-<body style="overflow: hidden;">
+<body>
 <div class="announcement" id="announcementText">Raíz Prohibida · Envíos a todo el Perú · Atención personalizada · Juguetes eróticos: +18</div>
 <header class="site-header">
   <div class="header-inner">
@@ -2053,6 +2053,8 @@ function downloadCloudReadyHTML(){
  const exportRoot=document.documentElement.cloneNode(true);
  exportRoot.removeAttribute("data-admin-access");
  exportRoot.querySelectorAll("#loginModal,#adminModal").forEach(el=>el.classList.remove("show"));
+  const exportBody=exportRoot.querySelector("body");
+  if(exportBody)exportBody.style.removeProperty("overflow");
  const source="<!doctype html>\n"+exportRoot.outerHTML;
  if(!pattern.test(source)){toast("No se encontró la configuración de nube en este HTML.");return}
  const configuredHtml=source.replace(pattern,declaration);
