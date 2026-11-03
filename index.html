@@ -1948,6 +1948,286 @@ html body .footer a,html body .socials a{
 }
 </style>
 
+<style id="raizProhibidaOrderAndMotionStyles">
+.catalog-order-heading{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:14px}
+.catalog-order-heading strong{font:600 25px 'Playfair Display',serif;color:var(--ink)}
+.catalog-order-heading p{font-size:12px;line-height:1.65;color:var(--muted);max-width:680px;margin:6px 0 0}
+.catalog-order-tip{padding:12px 14px;border-radius:12px;background:#fff0f8;border:1px solid #efd6e5;color:#76516a;font-size:11px;line-height:1.6;margin:12px 0 16px}
+.catalog-order-list{display:grid;gap:9px}
+.catalog-order-row{display:grid;grid-template-columns:32px 22px 58px minmax(0,1fr) auto;align-items:center;gap:10px;padding:10px;border:1px solid var(--line);border-radius:14px;background:#fff;transition:border-color .7s ease,box-shadow .7s ease,background .7s ease;cursor:grab}
+.catalog-order-row:hover{border-color:#d78ab7;box-shadow:0 9px 25px rgba(194,24,120,.09)}
+.catalog-order-row.catalog-order-dragging{opacity:.48;border:2px dashed var(--rose-dark);background:#fff3f9}
+.catalog-order-number{display:grid;place-items:center;width:29px;height:29px;border-radius:50%;background:#fff0f8;color:#a51d64;font:600 12px 'DM Sans',sans-serif}
+.catalog-order-grip{font-size:20px;color:#b58aa3;cursor:grab;text-align:center}
+.catalog-order-row>img,.catalog-order-placeholder{width:58px;height:66px;object-fit:cover;border-radius:9px;background:#fff0f8;display:grid;place-items:center;color:#c21878}
+.catalog-order-copy{min-width:0}
+.catalog-order-copy strong{display:block;font-size:12px;line-height:1.4;overflow-wrap:anywhere}
+.catalog-order-copy small{display:block;margin-top:4px;color:var(--muted);font-size:10px;line-height:1.4}
+.catalog-order-actions{display:flex;gap:5px;align-items:center}
+.catalog-order-actions button{width:32px;height:32px;border:1px solid var(--line);border-radius:9px;background:#fff;color:#7c315d;font-size:16px;transition:background .5s ease,border-color .5s ease,transform .5s ease}
+.catalog-order-actions button:hover:not(:disabled){background:#fff0f8;border-color:#d78ab7;transform:scale(1.06)}
+.catalog-order-actions button:disabled{opacity:.25;cursor:not-allowed}
+.catalog-order-empty{padding:24px;text-align:center;border:1px dashed var(--line);border-radius:14px;color:var(--muted);font-size:12px}
+@keyframes rpV10LogoAura{0%,100%{filter:drop-shadow(0 2px 5px rgba(194,24,120,.04));opacity:1}50%{filter:drop-shadow(0 6px 15px rgba(194,24,120,.19));opacity:.99}}
+@keyframes rpV10SoftLight{0%,100%{box-shadow:0 7px 24px rgba(194,24,120,.035)}50%{box-shadow:0 13px 34px rgba(194,24,120,.12)}}
+@keyframes rpV10TextAura{0%,100%{text-shadow:0 0 0 rgba(194,24,120,0)}50%{text-shadow:0 2px 16px rgba(194,24,120,.16)}}
+@keyframes rpV10IconBreath{0%,100%{scale:1;opacity:.88}50%{scale:1.07;opacity:1}}
+/* El logo conserva exactamente su posición: solo cambia la luz y la sombra. */
+#brandLogoImg,#heroLogoImg,#footerLogoImg{position:relative!important;top:0!important;bottom:auto!important;margin:0!important;translate:0 0!important;transform:none!important;animation:rpV10LogoAura 15s ease-in-out infinite!important;will-change:filter,opacity}
+.hero-logo-card{top:auto!important;bottom:auto!important;translate:0 0!important;transform:none!important;animation:rpV10SoftLight 20s ease-in-out infinite!important}
+.hero-logo-card img{translate:0 0!important;transform:none!important}
+.brand-name,.hero-brand-title,.footer-brand-name{animation:rpV10TextAura 19s ease-in-out infinite!important}
+.benefit,.category-card,.review,.review-form,.faq-item,.stat,.design-admin-section,.cloud-setup-panel{animation:rpV10SoftLight 22s ease-in-out infinite!important}
+.benefit-icon,.category-card .symbol,.socials a svg{animation:rpV10IconBreath 12s ease-in-out infinite!important}
+.section-head h2,.promo-inner h2{animation:rpV10TextAura 21s ease-in-out infinite!important}
+.solid-btn,.outline-btn,.icon-btn,.chip,.size-option{transition:transform .8s cubic-bezier(.22,.61,.36,1),box-shadow .8s ease,border-color .8s ease!important}
+.solid-btn{animation:rpV10SoftLight 16s ease-in-out infinite!important}
+.faq-item.open .faq-answer{animation:rpV9FaqReveal .8s ease-out both!important}
+#productGrid .product-card,#productGrid .product-card *{animation-iteration-count:1!important}
+#productGrid .product-card.rp-catalog-seen,#productGrid .product-card.rp-catalog-seen *{animation:none!important}
+#productGrid .product-card:hover{transition:transform .9s ease,box-shadow .9s ease!important}
+#productGrid .product-image img{transition:transform 1s ease,filter 1s ease!important}
+@media(max-width:650px){
+ .catalog-order-heading{display:block}
+ .catalog-order-heading>.solid-btn{width:100%;margin-top:12px}
+ .catalog-order-row{grid-template-columns:27px 16px 48px minmax(0,1fr);gap:7px;padding:8px}
+ .catalog-order-row>img,.catalog-order-placeholder{width:48px;height:56px}
+ .catalog-order-actions{grid-column:1/-1;justify-content:flex-end}
+ .catalog-order-actions button{width:38px;height:34px}
+}
+@media(prefers-reduced-motion:reduce){
+ #brandLogoImg,#heroLogoImg,#footerLogoImg,.hero-logo-card,.brand-name,.hero-brand-title,.footer-brand-name,
+ .benefit,.category-card,.review,.review-form,.faq-item,.stat,.design-admin-section,.cloud-setup-panel,
+ .benefit-icon,.category-card .symbol,.socials a svg,.section-head h2,.promo-inner h2,.solid-btn{animation:none!important}
+}
+</style>
+
+
+<style id="raizProhibidaCategoryOrderAndCenteredMotionV12">
+:root{--rp-final-ease:cubic-bezier(.22,.61,.36,1)}
+@keyframes rpFinalLogoGlow{
+ 0%,100%{filter:drop-shadow(0 2px 5px rgba(194,24,120,.06));opacity:1}
+ 50%{filter:drop-shadow(0 7px 18px rgba(194,24,120,.22));opacity:.99}
+}
+@keyframes rpFinalHeroHalo{
+ 0%,100%{filter:drop-shadow(0 8px 20px rgba(194,24,120,.035));opacity:.96}
+ 50%{filter:drop-shadow(0 16px 34px rgba(194,24,120,.15));opacity:1}
+}
+@keyframes rpFinalOrbit{
+ from{rotate:0deg}
+ to{rotate:360deg}
+}
+@keyframes rpFinalShimmer{
+ 0%,100%{background-position:100% 50%}
+ 50%{background-position:0% 50%}
+}
+@keyframes rpFinalSoftPulse{
+ 0%,100%{opacity:.88}
+ 50%{opacity:1}
+}
+@keyframes rpFinalCardGlow{
+ 0%,100%{box-shadow:0 7px 22px rgba(194,24,120,.035);border-color:rgba(234,223,231,.86)}
+ 50%{box-shadow:0 15px 34px rgba(194,24,120,.12);border-color:rgba(194,24,120,.22)}
+}
+@keyframes rpFinalIconGlow{
+ 0%,100%{scale:1;filter:drop-shadow(0 1px 2px rgba(194,24,120,.04))}
+ 50%{scale:1.065;filter:drop-shadow(0 4px 9px rgba(194,24,120,.18))}
+}
+@keyframes rpFinalTextGlow{
+ 0%,100%{text-shadow:0 0 0 rgba(194,24,120,0)}
+ 50%{text-shadow:0 3px 17px rgba(194,24,120,.17)}
+}
+@keyframes rpFinalButtonGlow{
+ 0%,100%{box-shadow:0 4px 13px rgba(194,24,120,.055)}
+ 50%{box-shadow:0 9px 23px rgba(194,24,120,.17)}
+}
+
+/* LOGOS: ningún fotograma contiene translateY ni movimiento vertical. */
+#brandLogoImg,#heroLogoImg,#footerLogoImg{
+ position:relative!important;top:auto!important;bottom:auto!important;left:auto!important;right:auto!important;
+ margin:0!important;translate:0 0!important;transform:none!important;
+ transform-origin:center center!important;display:block!important;
+ animation:rpFinalLogoGlow 14s ease-in-out infinite!important;
+ animation-iteration-count:infinite!important;
+ will-change:filter,opacity;
+}
+.brand{align-items:center!important}
+.brand-logo{align-self:center!important;transform:none!important;translate:0 0!important}
+.brand:hover .brand-logo{transform:none!important}
+.brand-copy{align-self:center!important}
+
+/* Portada: un contenedor estable y centrado en escritorio y móvil. */
+.hero-panel{align-items:center!important}
+.hero-art,
+.hero-panel>.hero-art,
+.hero-art.reveal,
+.hero-art.visible,
+.hero-art.rp-motion-target,
+body.rp-motion-enabled .hero-art.rp-motion-target.rp-motion-visible{
+ position:relative!important;display:grid!important;
+ grid-template-columns:1fr!important;place-items:center!important;
+ justify-items:center!important;align-content:center!important;align-items:center!important;
+ justify-self:center!important;align-self:center!important;
+ width:100%!important;max-width:520px!important;
+ height:370px!important;min-height:370px!important;
+ margin:0 auto!important;padding:0!important;
+ top:auto!important;bottom:auto!important;left:auto!important;right:auto!important;
+ translate:0 0!important;transform:none!important;
+ opacity:1!important;visibility:visible!important;
+ animation:rpFinalHeroHalo 20s ease-in-out infinite!important;
+ animation-iteration-count:infinite!important;
+}
+.hero-logo-card,
+.hero-art>.hero-logo-card{
+ position:relative!important;inset:auto!important;
+ top:auto!important;bottom:auto!important;left:auto!important;right:auto!important;
+ display:grid!important;place-items:center!important;
+ justify-self:center!important;align-self:center!important;
+ width:min(100%,300px)!important;height:350px!important;
+ margin:0 auto!important;padding:0!important;
+ translate:0 0!important;transform:none!important;
+ animation:rpFinalHeroHalo 18s ease-in-out infinite!important;
+ animation-iteration-count:infinite!important;
+}
+#heroLogoImg,
+.hero-logo-card img#heroLogoImg{
+ position:relative!important;inset:auto!important;
+ top:auto!important;bottom:auto!important;left:auto!important;right:auto!important;
+ width:var(--rp-hero-logo-width,145px)!important;
+ max-width:90%!important;max-height:92%!important;height:auto!important;
+ object-fit:contain!important;object-position:center center!important;
+ margin:0 auto!important;padding:0!important;
+ translate:0 0!important;transform:none!important;
+ animation:rpFinalLogoGlow 14s ease-in-out infinite!important;
+ animation-iteration-count:infinite!important;
+}
+.hero-orbit{
+ position:absolute!important;top:50%!important;left:50%!important;
+ right:auto!important;bottom:auto!important;
+ translate:-50% -50%!important;transform:none!important;
+ animation:rpFinalOrbit 100s linear infinite!important;
+ animation-iteration-count:infinite!important;
+}
+@media(max-width:900px){
+ .hero-art,.hero-panel>.hero-art,.hero-art.reveal,.hero-art.visible,
+ body.rp-motion-enabled .hero-art.rp-motion-target.rp-motion-visible{
+  width:100%!important;height:330px!important;min-height:330px!important;
+  margin:0 auto!important;transform:none!important;translate:0 0!important;
+ }
+ .hero-logo-card,.hero-art>.hero-logo-card{width:min(100%,260px)!important;height:310px!important}
+}
+@media(max-width:650px){
+ .hero-panel{grid-template-columns:1fr!important;align-items:center!important}
+ .hero-art,.hero-panel>.hero-art,.hero-art.reveal,.hero-art.visible,
+ body.rp-motion-enabled .hero-art.rp-motion-target.rp-motion-visible{
+  width:100%!important;height:300px!important;min-height:300px!important;
+  margin:0 auto!important;padding:0!important;
+  transform:none!important;translate:0 0!important;
+ }
+ .hero-logo-card,.hero-art>.hero-logo-card{width:min(100%,230px)!important;height:275px!important}
+ #heroLogoImg,.hero-logo-card img#heroLogoImg{max-width:88%!important;max-height:90%!important}
+ .hero-orbit{width:260px!important;height:260px!important}
+}
+
+/* Animación elegante en toda la tienda, excepto las tarjetas del catálogo. */
+.announcement{
+ background-size:220% 100%!important;
+ animation:rpFinalShimmer 28s ease-in-out infinite!important;
+}
+.site-header{animation:rpFinalCardGlow 22s ease-in-out infinite!important;animation-iteration-count:infinite!important}
+.brand-name,.brand-wordmark,.footer-brand-name{animation:rpFinalTextGlow 18s ease-in-out infinite!important;animation-iteration-count:infinite!important}
+.brand-slogan,.footer-slogan{animation:rpFinalSoftPulse 20s ease-in-out infinite!important;animation-iteration-count:infinite!important}
+.hero-panel{background-size:180% 180%!important;animation:rpFinalShimmer 32s ease-in-out infinite!important}
+.hero-brand-title,.section-head h2,.promo-inner h2{animation:rpFinalTextGlow 18s ease-in-out infinite!important;animation-iteration-count:infinite!important}
+.hero-slogan,.section-desc{animation:rpFinalSoftPulse 19s ease-in-out infinite!important;animation-iteration-count:infinite!important}
+.hero-buttons .solid-btn{animation:rpFinalButtonGlow 13s ease-in-out infinite!important;animation-iteration-count:infinite!important}
+.floating-note{animation:rpFinalCardGlow 19s ease-in-out infinite!important;animation-iteration-count:infinite!important}
+.floating-note.two{animation-delay:2.5s!important}
+.benefit,.category-card,.review,.review-form,.faq-item{
+ animation:rpFinalCardGlow 21s ease-in-out infinite!important;
+ animation-iteration-count:infinite!important;
+}
+.benefit:nth-child(2),.category-card:nth-child(2){animation-delay:1.2s!important}
+.benefit:nth-child(3),.category-card:nth-child(3){animation-delay:2.4s!important}
+.benefit:nth-child(4),.category-card:nth-child(4){animation-delay:3.6s!important}
+.benefit-icon,.category-card .symbol,.stars{
+ display:inline-block;
+ animation:rpFinalIconGlow 11s ease-in-out infinite!important;
+ animation-iteration-count:infinite!important;
+}
+.promo-inner{background-size:220% 100%!important;animation:rpFinalShimmer 27s ease-in-out infinite!important}
+.faq-item.open .faq-toggle-icon{animation:rpFinalIconGlow 8s ease-in-out infinite!important;animation-iteration-count:infinite!important}
+.footer{animation:rpFinalCardGlow 24s ease-in-out infinite!important;animation-iteration-count:infinite!important}
+.socials a{animation:rpFinalIconGlow 13s ease-in-out infinite!important;animation-iteration-count:infinite!important}
+.socials a:nth-child(2){animation-delay:1.3s!important}
+.socials a:nth-child(3){animation-delay:2.6s!important}
+.socials a:nth-child(4){animation-delay:3.9s!important}
+.wa-float{animation:rpFinalButtonGlow 10s ease-in-out infinite!important;animation-iteration-count:infinite!important}
+.admin-shell .stat,.admin-shell .design-admin-section,.admin-shell .cloud-setup-panel,
+.admin-shell .visual-editor-panel,.admin-shell .admin-live-card{
+ animation:rpFinalCardGlow 24s ease-in-out infinite!important;
+ animation-iteration-count:infinite!important;
+}
+.admin-tabs button.active{animation:rpFinalButtonGlow 14s ease-in-out infinite!important;animation-iteration-count:infinite!important}
+
+/* Las tarjetas del catálogo solo tienen una entrada; nunca reciben bucles. */
+#productGrid .product-card,#productGrid .product-card *{animation-iteration-count:1!important}
+#productGrid .product-card.rp-catalog-seen,
+#productGrid .product-card.rp-catalog-seen *{animation:none!important}
+#productGrid .product-card.rp-catalog-enter{animation-iteration-count:1!important}
+#productGrid .product-card.rp-catalog-enter .product-image img,
+#productGrid .product-card.rp-catalog-enter .heart,
+#productGrid .product-card.rp-catalog-enter .product-tag,
+#productGrid .product-card.rp-catalog-enter .product-info>*{animation-iteration-count:1!important}
+
+/* Editor del orden por categoría: cuatro espacios independientes. */
+.catalog-order-category-tabs{
+ display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px;margin:16px 0;
+}
+.catalog-order-category-tab{
+ min-width:0;display:flex;flex-direction:column;align-items:flex-start;gap:5px;
+ padding:13px 14px;border:1px solid var(--line);border-radius:14px;
+ background:#fff;color:var(--ink);text-align:left;
+ transition:background .7s ease,border-color .7s ease,box-shadow .7s ease,transform .7s ease;
+}
+.catalog-order-category-tab span{font:600 14px 'Playfair Display',serif}
+.catalog-order-category-tab small{font:10px 'DM Sans',sans-serif;color:var(--muted);line-height:1.35}
+.catalog-order-category-tab.active{
+ background:#fff0f8;border-color:#d78ab7;color:#9e155f;
+ box-shadow:0 8px 22px rgba(194,24,120,.10);
+}
+.catalog-order-category-tab:hover{transform:translateY(-2px);border-color:#d78ab7}
+.catalog-order-category-head{
+ display:flex;align-items:center;justify-content:space-between;gap:14px;
+ padding:13px 0 5px;
+}
+.catalog-order-category-head strong{display:block;font:600 22px 'Playfair Display',serif}
+.catalog-order-category-head small{display:block;margin-top:4px;max-width:520px;color:var(--muted);font-size:11px;line-height:1.5}
+.catalog-order-category-head .solid-btn{flex:0 0 auto}
+.catalog-order-row{transition:transform .7s ease,border-color .7s ease,box-shadow .7s ease!important}
+.catalog-order-row:hover{transform:translateX(2px);box-shadow:0 10px 26px rgba(194,24,120,.09)}
+.catalog-order-actions button{transition:transform .55s ease,background .55s ease,border-color .55s ease!important}
+.catalog-order-actions button:hover:not(:disabled){transform:scale(1.07)!important}
+@media(max-width:760px){
+ .catalog-order-category-tabs{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .catalog-order-category-head{align-items:stretch;flex-direction:column}
+ .catalog-order-category-head .solid-btn{width:100%}
+ .catalog-order-row{grid-template-columns:27px 15px 48px minmax(0,1fr);gap:7px}
+ .catalog-order-row>img,.catalog-order-placeholder{width:48px;height:58px}
+ .catalog-order-actions{grid-column:1/-1;justify-content:flex-end}
+}
+@media(prefers-reduced-motion:reduce){
+ #brandLogoImg,#heroLogoImg,#footerLogoImg,.hero-art,.hero-logo-card,.hero-orbit,
+ .announcement,.site-header,.brand-name,.brand-wordmark,.brand-slogan,.footer-brand-name,
+ .footer-slogan,.hero-panel,.hero-brand-title,.hero-slogan,.section-head h2,.section-desc,
+ .hero-buttons .solid-btn,.floating-note,.benefit,.benefit-icon,.category-card,
+ .category-card .symbol,.stars,.promo-inner,.faq-item,.faq-item.open .faq-toggle-icon,
+ .footer,.socials a,.wa-float,.admin-shell .stat,.admin-shell .design-admin-section,
+ .admin-shell .cloud-setup-panel,.admin-shell .visual-editor-panel,
+ .admin-shell .admin-live-card,.admin-tabs button.active{animation:none!important}
+}
+</style>
+
 </head>
 <body style="" class="rp-motion-enabled">
 <div class="announcement rp-motion-target rp-effect-up rp-motion-visible" id="announcementText" data-rp-motion-ready="1" style="--rp-stagger: 0ms;">Raíz Prohibida · Envíos a todo el Perú · Atención personalizada · Juguetes eróticos: +18</div>
@@ -2011,7 +2291,7 @@ html body .footer a,html body .socials a{
     <div class="section-head reveal rp-motion-target rp-effect-left rp-motion-visible visible" data-rp-motion-ready="1" style="--rp-stagger: 0ms;"><div><div class="section-kicker">La selección de la boutique</div><h2 id="pageCatalogHeading">Nuestro catálogo</h2></div><p class="section-desc" id="pageCatalogDescription">Mira cada detalle, revisa tallas y agrega tus favoritos a la bolsa.</p></div>
     <div class="toolbar rp-motion-target rp-effect-up rp-motion-visible" data-rp-motion-ready="1" style="--rp-stagger: 75ms;">
       <div class="searchbox"><span>⌕</span><input id="searchInput" type="search" placeholder="Buscar productos..." oninput="renderProducts()"></div>
-      <select id="sortSelect" onchange="renderProducts()"><option value="featured">Ordenar: destacados</option><option value="low">Precio: menor a mayor</option><option value="high">Precio: mayor a menor</option><option value="name">Nombre: A-Z</option></select>
+      <select id="sortSelect" onchange="renderProducts()"><option value="manual" selected>Orden de la tienda</option><option value="featured">Ordenar: destacados</option><option value="low">Precio: menor a mayor</option><option value="high">Precio: mayor a menor</option><option value="name">Nombre: A-Z</option></select>
     </div>
     <div class="chips rp-motion-target rp-effect-up rp-motion-visible" id="categoryChips" data-rp-motion-ready="1" style="--rp-stagger: 150ms;"><button class="chip " onclick="setCategory('Todos')">Todos</button><button class="chip active" onclick="setCategory('Disfraces')">Disfraces</button><button class="chip " onclick="setCategory('Sets')">Sets</button><button class="chip " onclick="setCategory('Pijamas')">Pijamas</button><button class="chip " onclick="setCategory('Juegos eróticos')">Juegos eróticos</button></div>
     <div class="product-grid" id="productGrid"><article class="product-card rp-motion-target rp-effect-zoom rp-motion-visible rp-catalog-enter" data-product-id="p1793502546917" style="--card-delay: 0s; --rp-stagger: 0ms;" data-rp-motion-ready="1"><div class="product-image" style="" onclick="openProduct('p1793502546917')"><img src="https://oqnyusdubmdwnlpasqda.supabase.co/storage/v1/object/public/product-photos/products/p1793502546917/1793502546927-0.jpg" alt="Set Mucama" style="object-fit:cover;object-position:center center;--photo-zoom:0.8"><button class="heart " onclick="event.stopPropagation();toggleFavorite('p1793502546917')" aria-label="Favorito">♡</button></div><div class="product-info"><div class="product-category">Disfraces</div><h3>Set Mucama</h3><div class="product-description">brasier con
@@ -2200,7 +2480,7 @@ irresistible</p>
 <div class="modal-backdrop" id="adminModal" onclick="backdropClose(event,'adminModal')"><div class="modal"><div class="modal-head"><h3>Panel de administración</h3><button class="close" onclick="closeAdmin()">×</button></div><div class="admin-shell">
   <div class="admin-note"><strong>Publicación compartida:</strong> configura Supabase en «Tienda y redes» para compartir catálogo, fotos, stock, logo y tipografías con todas las clientas. Sin conexión, los cambios permanecen solo en este navegador.</div>
   <div class="admin-stats"><div class="stat"><small>Productos activos</small><strong id="statProducts">63</strong></div><div class="stat"><small>Pedidos en este navegador</small><strong id="statOrders">0</strong></div><div class="stat"><small>Artículos en bolsa</small><strong id="statCart">0</strong></div></div>
-  <div class="admin-tabs"><button class="" onclick="adminTab('products',this)">Productos</button><button onclick="adminTab('orders',this)" class="">Pedidos</button><button onclick="adminTab('settings',this)" class="active">Tienda y redes</button><button onclick="adminTab('design',this)" class="">Diseño de página</button><button onclick="adminTab('reviews',this)">Reseñas</button></div>
+  <div class="admin-tabs"><button class="" onclick="adminTab('products',this)">Productos</button><button onclick="adminTab('catalogOrder',this)">Orden del catálogo</button><button onclick="adminTab('orders',this)" class="">Pedidos</button><button onclick="adminTab('settings',this)" class="active">Tienda y redes</button><button onclick="adminTab('design',this)" class="">Diseño de página</button><button onclick="adminTab('reviews',this)">Reseñas</button></div>
   <div id="adminProducts" class="hidden">
     <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:14px"><strong style="font-family:'Playfair Display',serif;font-size:20px">Gestionar catálogo</strong><button class="solid-btn" onclick="newProduct()">＋ Agregar producto</button></div>
     <div id="adminProductList"><div class="admin-product"><img src="https://oqnyusdubmdwnlpasqda.supabase.co/storage/v1/object/public/product-photos/products/p1793741752369/1793741752426-0.jpg"><div class="grow"><strong>Set Jessica Rabbit</strong><small>Sets · S/ 70.00 · Stock: 10 · Visible</small></div><button onclick="editProduct('p1793741752369')">Editar</button><button onclick="deleteProduct('p1793741752369')">Eliminar</button></div><div class="admin-product"><img src="https://oqnyusdubmdwnlpasqda.supabase.co/storage/v1/object/public/product-photos/products/p1793741374207/1793741374243-0.jpg"><div class="grow"><strong>Set Cereza Prohibida</strong><small>Sets · S/ 55.00 · Stock: 10 · Visible</small></div><button onclick="editProduct('p1793741374207')">Editar</button><button onclick="deleteProduct('p1793741374207')">Eliminar</button></div><div class="admin-product"><img src="https://oqnyusdubmdwnlpasqda.supabase.co/storage/v1/object/public/product-photos/products/p1793741080380/1793741080411-0.jpg"><div class="grow"><strong>Set Deborah</strong><small>Sets · S/ 60.00 · Stock: 10 · Visible</small></div><button onclick="editProduct('p1793741080380')">Editar</button><button onclick="deleteProduct('p1793741080380')">Eliminar</button></div><div class="admin-product"><img src="https://oqnyusdubmdwnlpasqda.supabase.co/storage/v1/object/public/product-photos/products/p1793740945438/1793740945472-0.jpg"><div class="grow"><strong>Kit Felino</strong><small>Juegos eróticos · S/ 60.00 · Stock: 10 · Visible</small></div><button onclick="editProduct('p1793740945438')">Editar</button><button onclick="deleteProduct('p1793740945438')">Eliminar</button></div><div class="admin-product"><img src="https://oqnyusdubmdwnlpasqda.supabase.co/storage/v1/object/public/product-photos/products/p1793739745539/1793739745570-0.jpg"><div class="grow"><strong>Set Canela</strong><small>Sets · S/ 50.00 · Stock: 10 · Visible</small></div><button onclick="editProduct('p1793739745539')">Editar</button><button onclick="deleteProduct('p1793739745539')">Eliminar</button></div><div class="admin-product"><img src="https://oqnyusdubmdwnlpasqda.supabase.co/storage/v1/object/public/product-photos/products/p1793739587860/1793739587901-0.jpg"><div class="grow"><strong>Set Pétalos del Corazón</strong><small>Sets · S/ 50.00 · Stock: 10 · Visible</small></div><button onclick="editProduct('p1793739587860')">Editar</button><button onclick="deleteProduct('p1793739587860')">Eliminar</button></div><div class="admin-product"><img src="https://oqnyusdubmdwnlpasqda.supabase.co/storage/v1/object/public/product-photos/products/p1793739443481/1793739443516-0.jpg"><div class="grow"><strong>Set Lavanda</strong><small>Sets · S/ 50.00 · Stock: 10 · Visible</small></div><button onclick="editProduct('p1793739443481')">Editar</button><button onclick="deleteProduct('p1793739443481')">Eliminar</button></div><div class="admin-product"><img src="https://oqnyusdubmdwnlpasqda.supabase.co/storage/v1/object/public/product-photos/products/p1793739791970/1793739792002-0.jpg"><div class="grow"><strong>Set Velvet</strong><small>Sets · S/ 50.00 · Stock: 10 · Visible</small></div><button onclick="editProduct('p1793739791970')">Editar</button><button onclick="deleteProduct('p1793739791970')">Eliminar</button></div><div class="admin-product"><img src="https://oqnyusdubmdwnlpasqda.supabase.co/storage/v1/object/public/product-photos/products/p1793502546917/1793502546927-0.jpg"><div class="grow"><strong>Set Mucama</strong><small>Disfraces · S/ 65.00 · Stock: 9 · Visible</small></div><button onclick="editProduct('p1793502546917')">Editar</button><button onclick="deleteProduct('p1793502546917')">Eliminar</button></div><div class="admin-product"><img src="https://oqnyusdubmdwnlpasqda.supabase.co/storage/v1/object/public/product-photos/products/p1793740686917/1793740686947-0.jpg"><div class="grow"><strong>Kit Bondage (8 Piezas)</strong><small>Juegos eróticos · S/ 70.00 · Stock: 10 · Visible</small></div><button onclick="editProduct('p1793740686917')">Editar</button><button onclick="deleteProduct('p1793740686917')">Eliminar</button></div><div class="admin-product"><img src="https://oqnyusdubmdwnlpasqda.supabase.co/storage/v1/object/public/product-photos/products/p1793739485508/1793739485539-0.jpg"><div class="grow"><strong>Set Yirasol</strong><small>Sets · S/ 50.00 · Stock: 10 · Visible</small></div><button onclick="editProduct('p1793739485508')">Editar</button><button onclick="deleteProduct('p1793739485508')">Eliminar</button></div><div class="admin-product"><img src="https://oqnyusdubmdwnlpasqda.supabase.co/storage/v1/object/public/product-photos/products/p1793502040593/1793502048643-0.jpg"><div class="grow"><strong>Set Novia</strong><small>Disfraces · S/ 65.00 · Stock: 10 · Visible</small></div><button onclick="editProduct('p1793502040593')">Editar</button><button onclick="deleteProduct('p1793502040593')">Eliminar</button></div><div class="admin-product"><img src="https://oqnyusdubmdwnlpasqda.supabase.co/storage/v1/object/public/product-photos/products/p1793738937232/1793738937256-0.jpg"><div class="grow"><strong>Set Celine</strong><small>Sets · S/ 60.00 · Stock: 10 · Visible</small></div><button onclick="editProduct('p1793738937232')">Editar</button><button onclick="deleteProduct('p1793738937232')">Eliminar</button></div><div class="admin-product"><img src="https://oqnyusdubmdwnlpasqda.supabase.co/storage/v1/object/public/product-photos/products/p1793740040518/1793740040549-0.jpg"><div class="grow"><strong>Vibrador Venoso</strong><small>Juegos eróticos · S/ 95.00 · Stock: 10 · Visible</small></div><button onclick="editProduct('p1793740040518')">Editar</button><button onclick="deleteProduct('p1793740040518')">Eliminar</button></div><div class="admin-product"><img src="https://oqnyusdubmdwnlpasqda.supabase.co/storage/v1/object/public/product-photos/products/p1793739690236/1793739690268-0.jpg"><div class="grow"><strong>Set Wine</strong><small>Sets · S/ 50.00 · Stock: 10 · Visible</small></div><button onclick="editProduct('p1793739690236')">Editar</button><button onclick="deleteProduct('p1793739690236')">Eliminar</button></div><div class="admin-product"><img src="https://oqnyusdubmdwnlpasqda.supabase.co/storage/v1/object/public/product-photos/products/p1793503500835/1793738262292-0.jpg"><div class="grow"><strong>Vibrador4</strong><small>Juegos eróticos · S/ 90.00 · Stock: 10 · Visible</small></div><button onclick="editProduct('p1793503500835')">Editar</button><button onclick="deleteProduct('p1793503500835')">Eliminar</button></div><div class="admin-product"><img src="https://oqnyusdubmdwnlpasqda.supabase.co/storage/v1/object/public/product-photos/products/p1793503352334/1793503352344-0.jpg"><div class="grow"><strong>Set Misterio</strong><small>Sets · S/ 65.00 · Stock: 10 · Visible</small></div><button onclick="editProduct('p1793503352334')">Editar</button><button onclick="deleteProduct('p1793503352334')">Eliminar</button></div><div class="admin-product"><img src="https://oqnyusdubmdwnlpasqda.supabase.co/storage/v1/object/public/product-photos/products/p1793739250933/1793739250960-0.jpg"><div class="grow"><strong>Set Venus</strong><small>Sets · S/ 65.00 · Stock: 10 · Visible</small></div><button onclick="editProduct('p1793739250933')">Editar</button><button onclick="deleteProduct('p1793739250933')">Eliminar</button></div><div class="admin-product"><img src="https://oqnyusdubmdwnlpasqda.supabase.co/storage/v1/object/public/product-photos/products/p1793503847619/1793503847634-0.jpg"><div class="grow"><strong>Pijama Washington DC</strong><small>Pijamas · S/ 70.00 · Stock: 10 · Visible</small></div><button onclick="editProduct('p1793503847619')">Editar</button><button onclick="deleteProduct('p1793503847619')">Eliminar</button></div><div class="admin-product"><img src="https://oqnyusdubmdwnlpasqda.supabase.co/storage/v1/object/public/product-photos/products/p1793502175770/1793502181110-0.jpg"><div class="grow"><strong>Set Enfermera</strong><small>Disfraces · S/ 65.00 · Stock: 10 · Visible</small></div><button onclick="editProduct('p1793502175770')">Editar</button><button onclick="deleteProduct('p1793502175770')">Eliminar</button></div><div class="admin-product"><img src="https://oqnyusdubmdwnlpasqda.supabase.co/storage/v1/object/public/product-photos/products/p1793739642482/1793739642522-0.jpg"><div class="grow"><strong>Set Ébano</strong><small>Sets · S/ 55.00 · Stock: 10 · Visible</small></div><button onclick="editProduct('p1793739642482')">Editar</button><button onclick="deleteProduct('p1793739642482')">Eliminar</button></div><div class="admin-product"><img src="https://oqnyusdubmdwnlpasqda.supabase.co/storage/v1/object/public/product-photos/products/p1793739521464/1793739521499-0.jpg"><div class="grow"><strong>Set Mar</strong><small>Sets · S/ 50.00 · Stock: 10 · Visible</small></div><button onclick="editProduct('p1793739521464')">Editar</button><button onclick="deleteProduct('p1793739521464')">Eliminar</button></div><div class="admin-product"><img src="https://oqnyusdubmdwnlpasqda.supabase.co/storage/v1/object/public/product-photos/products/p1793501298854/1793501607691-0.jpg"><div class="grow"><strong>Set Marinera</strong><small>Disfraces · S/ 65.00 · Stock: 9 · Visible</small></div><button onclick="editProduct('p1793501298854')">Editar</button><button onclick="deleteProduct('p1793501298854')">Eliminar</button></div><div class="admin-product"><img src="https://oqnyusdubmdwnlpasqda.supabase.co/storage/v1/object/public/product-photos/products/p1793740185907/1793740185934-0.jpg"><div class="grow"><strong>Vibrador Lengua y Cabeza</strong><small>Juegos eróticos · S/ 105.00 · Stock: 10 · Visible</small></div><button onclick="editProduct('p1793740185907')">Editar</button><button onclick="deleteProduct('p1793740185907')">Eliminar</button></div><div class="admin-product"><img src="https://oqnyusdubmdwnlpasqda.supabase.co/storage/v1/object/public/product-photos/products/p1793502474695/1793502480915-0.jpg"><div class="grow"><strong>Set Policia</strong><small>Disfraces · S/ 65.00 · Stock: 10 · Visible</small></div><button onclick="editProduct('p1793502474695')">Editar</button><button onclick="deleteProduct('p1793502474695')">Eliminar</button></div><div class="admin-product"><img src="https://oqnyusdubmdwnlpasqda.supabase.co/storage/v1/object/public/product-photos/products/p1793503417597/1793503417610-0.jpg"><div class="grow"><strong>Set Raiz Floral</strong><small>Sets · S/ 55.00 · Stock: 10 · Visible</small></div><button onclick="editProduct('p1793503417597')">Editar</button><button onclick="deleteProduct('p1793503417597')">Eliminar</button></div><div class="admin-product"><img src="https://oqnyusdubmdwnlpasqda.supabase.co/storage/v1/object/public/product-photos/products/p1793503274442/1793503274453-0.jpg"><div class="grow"><strong>Set Fernanda</strong><small>Sets · S/ 60.00 · Stock: 10 · Visible</small></div><button onclick="editProduct('p1793503274442')">Editar</button><button onclick="deleteProduct('p1793503274442')">Eliminar</button></div><div class="admin-product"><img src="https://oqnyusdubmdwnlpasqda.supabase.co/storage/v1/object/public/product-photos/products/p1793504184846/1793504184863-0.jpg"><div class="grow"><strong>Pijama Corazones Azules</strong><small>Pijamas · S/ 60.00 · Stock: 10 · Visible</small></div><button onclick="editProduct('p1793504184846')">Editar</button><button onclick="deleteProduct('p1793504184846')">Eliminar</button></div><div class="admin-product"><img src="https://oqnyusdubmdwnlpasqda.supabase.co/storage/v1/object/public/product-photos/products/p1793504236645/1793504236659-0.jpg"><div class="grow"><strong>Pijama Corazones Rosados</strong><small>Pijamas · S/ 60.00 · Stock: 9 · Visible</small></div><button onclick="editProduct('p1793504236645')">Editar</button><button onclick="deleteProduct('p1793504236645')">Eliminar</button></div><div class="admin-product"><img src="https://oqnyusdubmdwnlpasqda.supabase.co/storage/v1/object/public/product-photos/products/p1793504109959/1793504109973-0.jpg"><div class="grow"><strong>Pijama Corazones Morado</strong><small>Pijamas · S/ 70.00 · Stock: 10 · Visible</small></div><button onclick="editProduct('p1793504109959')">Editar</button><button onclick="deleteProduct('p1793504109959')">Eliminar</button></div><div class="admin-product"><img src="https://oqnyusdubmdwnlpasqda.supabase.co/storage/v1/object/public/product-photos/products/p1793503652803/1793503652816-0.jpg"><div class="grow"><strong>Verdad o Reto</strong><small>Juegos eróticos · S/ 60.00 · Stock: 10 · Visible</small></div><button onclick="editProduct('p1793503652803')">Editar</button><button onclick="deleteProduct('p1793503652803')">Eliminar</button></div><div class="admin-product"><img src="https://oqnyusdubmdwnlpasqda.supabase.co/storage/v1/object/public/product-photos/products/p1793740231217/1793740231245-0.jpg"><div class="grow"><strong>Vibrador Doble</strong><small>Juegos eróticos · S/ 90.00 · Stock: 10 · Visible</small></div><button onclick="editProduct('p1793740231217')">Editar</button><button onclick="deleteProduct('p1793740231217')">Eliminar</button></div><div class="admin-product"><img src="https://oqnyusdubmdwnlpasqda.supabase.co/storage/v1/object/public/product-photos/products/p1793741002472/1793741002505-0.jpg"><div class="grow"><strong>Pijama</strong><small>Pijamas · S/ 50.00 · Stock: 10 · Visible</small></div><button onclick="editProduct('p1793741002472')">Editar</button><button onclick="deleteProduct('p1793741002472')">Eliminar</button></div><div class="admin-product"><img src="https://oqnyusdubmdwnlpasqda.supabase.co/storage/v1/object/public/product-photos/products/p1793741183386/1793741183436-0.jpg"><div class="grow"><strong>Set Edén</strong><small>Sets · S/ 50.00 · Stock: 10 · Visible</small></div><button onclick="editProduct('p1793741183386')">Editar</button><button onclick="deleteProduct('p1793741183386')">Eliminar</button></div><div class="admin-product"><img src="https://oqnyusdubmdwnlpasqda.supabase.co/storage/v1/object/public/product-photos/products/p1793739942687/1793739942719-0.jpg"><div class="grow"><strong>Set Body Love</strong><small>Sets · S/ 55.00 · Stock: 10 · Visible</small></div><button onclick="editProduct('p1793739942687')">Editar</button><button onclick="deleteProduct('p1793739942687')">Eliminar</button></div><div class="admin-product"><img src="https://oqnyusdubmdwnlpasqda.supabase.co/storage/v1/object/public/product-photos/products/p1793739185194/1793739185222-0.jpg"><div class="grow"><strong>Set Ginebra</strong><small>Sets · S/ 60.00 · Stock: 10 · Visible</small></div><button onclick="editProduct('p1793739185194')">Editar</button><button onclick="deleteProduct('p1793739185194')">Eliminar</button></div><div class="admin-product"><img src="https://oqnyusdubmdwnlpasqda.supabase.co/storage/v1/object/public/product-photos/products/p1793503097524/1793503108058-0.jpg"><div class="grow"><strong>Set Girly</strong><small>Sets · S/ 65.00 · Stock: 10 · Visible</small></div><button onclick="editProduct('p1793503097524')">Editar</button><button onclick="deleteProduct('p1793503097524')">Eliminar</button></div><div class="admin-product"><img src="https://oqnyusdubmdwnlpasqda.supabase.co/storage/v1/object/public/product-photos/products/p1793739316122/1793739316150-0.jpg"><div class="grow"><strong>Set Reconcilacion</strong><small>Sets · S/ 60.00 · Stock: 10 · Visible</small></div><button onclick="editProduct('p1793739316122')">Editar</button><button onclick="deleteProduct('p1793739316122')">Eliminar</button></div><div class="admin-product"><img src="https://oqnyusdubmdwnlpasqda.supabase.co/storage/v1/object/public/product-photos/products/p1793739843330/1793739843361-0.jpg"><div class="grow"><strong>Set Body Lace</strong><small>Sets · S/ 55.00 · Stock: 10 · Visible</small></div><button onclick="editProduct('p1793739843330')">Editar</button><button onclick="deleteProduct('p1793739843330')">Eliminar</button></div><div class="admin-product"><img src="https://oqnyusdubmdwnlpasqda.supabase.co/storage/v1/object/public/product-photos/products/p1793502607095/1793502607103-0.jpg"><div class="grow"><strong>Set Colegiala</strong><small>Disfraces · S/ 65.00 · Stock: 10 · Visible</small></div><button onclick="editProduct('p1793502607095')">Editar</button><button onclick="deleteProduct('p1793502607095')">Eliminar</button></div><div class="admin-product"><img src="https://oqnyusdubmdwnlpasqda.supabase.co/storage/v1/object/public/product-photos/products/p1793740354400/1793740354427-0.jpg"><div class="grow"><strong>Plug Anal Diamante</strong><small>Juegos eróticos · S/ 45.00 · Stock: 10 · Visible</small></div><button onclick="editProduct('p1793740354400')">Editar</button><button onclick="deleteProduct('p1793740354400')">Eliminar</button></div><div class="admin-product"><img src="https://oqnyusdubmdwnlpasqda.supabase.co/storage/v1/object/public/product-photos/products/p1793740096806/1793740096829-0.jpg"><div class="grow"><strong>Vibrador Pilas</strong><small>Juegos eróticos · S/ 72.00 · Stock: 10 · Visible</small></div><button onclick="editProduct('p1793740096806')">Editar</button><button onclick="deleteProduct('p1793740096806')">Eliminar</button></div><div class="admin-product"><img src="https://oqnyusdubmdwnlpasqda.supabase.co/storage/v1/object/public/product-photos/products/p1793740739919/1793740739949-0.jpg"><div class="grow"><strong>Kit Bondage (11 Piezas)</strong><small>Juegos eróticos · S/ 85.00 · Stock: 10 · Visible</small></div><button onclick="editProduct('p1793740739919')">Editar</button><button onclick="deleteProduct('p1793740739919')">Eliminar</button></div><div class="admin-product"><img src="https://oqnyusdubmdwnlpasqda.supabase.co/storage/v1/object/public/product-photos/products/p1793739987369/1793739987398-0.jpg"><div class="grow"><strong>Set Buster Camile</strong><small>Sets · S/ 35.00 · Stock: 10 · Visible</small></div><button onclick="editProduct('p1793739987369')">Editar</button><button onclick="deleteProduct('p1793739987369')">Eliminar</button></div><div class="admin-product"><img src="https://oqnyusdubmdwnlpasqda.supabase.co/storage/v1/object/public/product-photos/products/p1793504008042/1793504008057-0.jpg"><div class="grow"><strong>Pijama Monito 2</strong><small>Pijamas · S/ 70.00 · Stock: 10 · Visible</small></div><button onclick="editProduct('p1793504008042')">Editar</button><button onclick="deleteProduct('p1793504008042')">Eliminar</button></div><div class="admin-product"><img src="https://oqnyusdubmdwnlpasqda.supabase.co/storage/v1/object/public/product-photos/products/p1793740595504/1793740595541-0.jpg"><div class="grow"><strong>Kit Bondage (7 Piezas)</strong><small>Juegos eróticos · S/ 60.00 · Stock: 10 · Visible</small></div><button onclick="editProduct('p1793740595504')">Editar</button><button onclick="deleteProduct('p1793740595504')">Eliminar</button></div><div class="admin-product"><img src="https://oqnyusdubmdwnlpasqda.supabase.co/storage/v1/object/public/product-photos/products/p1793739376092/1793739376118-0.jpg"><div class="grow"><strong>Set Ana</strong><small>Sets · S/ 60.00 · Stock: 10 · Visible</small></div><button onclick="editProduct('p1793739376092')">Editar</button><button onclick="deleteProduct('p1793739376092')">Eliminar</button></div><div class="admin-product"><img src="https://oqnyusdubmdwnlpasqda.supabase.co/storage/v1/object/public/product-photos/products/p1793502737456/1793502755200-0.jpg"><div class="grow"><strong>Set Conejita</strong><small>Disfraces · S/ 65.00 · Stock: 10 · Visible</small></div><button onclick="editProduct('p1793502737456')">Editar</button><button onclick="deleteProduct('p1793502737456')">Eliminar</button></div><div class="admin-product"><img src="https://oqnyusdubmdwnlpasqda.supabase.co/storage/v1/object/public/product-photos/products/p1793502103084/1793502108305-0.jpg"><div class="grow"><strong>Set Angel</strong><small>Disfraces · S/ 65.00 · Stock: 8 · Visible</small></div><button onclick="editProduct('p1793502103084')">Editar</button><button onclick="deleteProduct('p1793502103084')">Eliminar</button></div><div class="admin-product"><img src="https://oqnyusdubmdwnlpasqda.supabase.co/storage/v1/object/public/product-photos/products/p1793740442925/1793740442972-0.jpg"><div class="grow"><strong>Plug Anal Corazon</strong><small>Juegos eróticos · S/ 45.00 · Stock: 10 · Visible</small></div><button onclick="editProduct('p1793740442925')">Editar</button><button onclick="deleteProduct('p1793740442925')">Eliminar</button></div><div class="admin-product"><img src="https://oqnyusdubmdwnlpasqda.supabase.co/storage/v1/object/public/product-photos/products/p1793740138817/1793740138839-0.jpg"><div class="grow"><strong>Vibrador Estirador</strong><small>Juegos eróticos · S/ 105.00 · Stock: 10 · Visible</small></div><button onclick="editProduct('p1793740138817')">Editar</button><button onclick="deleteProduct('p1793740138817')">Eliminar</button></div><div class="admin-product"><img src="https://oqnyusdubmdwnlpasqda.supabase.co/storage/v1/object/public/product-photos/products/p1793502794581/1793502794589-0.jpg"><div class="grow"><strong>Set Diablita</strong><small>Disfraces · S/ 65.00 · Stock: 10 · Visible</small></div><button onclick="editProduct('p1793502794581')">Editar</button><button onclick="deleteProduct('p1793502794581')">Eliminar</button></div><div class="admin-product"><img src="https://oqnyusdubmdwnlpasqda.supabase.co/storage/v1/object/public/product-photos/products/p1793741304804/1793741304838-0.jpg"><div class="grow"><strong>Set Safari</strong><small>Sets · S/ 50.00 · Stock: 10 · Visible</small></div><button onclick="editProduct('p1793741304804')">Editar</button><button onclick="deleteProduct('p1793741304804')">Eliminar</button></div><div class="admin-product"><img src="https://oqnyusdubmdwnlpasqda.supabase.co/storage/v1/object/public/product-photos/products/p1793503942861/1793503942873-0.jpg"><div class="grow"><strong>Pijama New York</strong><small>Pijamas · S/ 70.00 · Stock: 10 · Visible</small></div><button onclick="editProduct('p1793503942861')">Editar</button><button onclick="deleteProduct('p1793503942861')">Eliminar</button></div><div class="admin-product"><img src="https://oqnyusdubmdwnlpasqda.supabase.co/storage/v1/object/public/product-photos/products/p1793738672443/1793738672472-0.jpg"><div class="grow"><strong>Set Raiz</strong><small>Sets · S/ 70.00 · Stock: 10 · Visible</small></div><button onclick="editProduct('p1793738672443')">Editar</button><button onclick="deleteProduct('p1793738672443')">Eliminar</button></div><div class="admin-product"><img src="https://oqnyusdubmdwnlpasqda.supabase.co/storage/v1/object/public/product-photos/products/p1793740791842/1793740791878-0.jpg"><div class="grow"><strong>Kit Bondage (10 Piezas)</strong><small>Juegos eróticos · S/ 100.00 · Stock: 10 · Visible</small></div><button onclick="editProduct('p1793740791842')">Editar</button><button onclick="deleteProduct('p1793740791842')">Eliminar</button></div><div class="admin-product"><img src="https://oqnyusdubmdwnlpasqda.supabase.co/storage/v1/object/public/product-photos/products/p1793503000640/1793503006003-0.jpg"><div class="grow"><strong>Set Jessica Rabbit</strong><small>Sets · S/ 70.00 · Stock: 10 · Visible</small></div><button onclick="editProduct('p1793503000640')">Editar</button><button onclick="deleteProduct('p1793503000640')">Eliminar</button></div><div class="admin-product"><img src="https://oqnyusdubmdwnlpasqda.supabase.co/storage/v1/object/public/product-photos/products/p1793504300924/1793504300937-0.jpg"><div class="grow"><strong>Pijama Corazones Colores</strong><small>Pijamas · S/ 60.00 · Stock: 10 · Visible</small></div><button onclick="editProduct('p1793504300924')">Editar</button><button onclick="deleteProduct('p1793504300924')">Eliminar</button></div><div class="admin-product"><img src="https://oqnyusdubmdwnlpasqda.supabase.co/storage/v1/object/public/product-photos/products/p1793503758376/1793503758389-0.jpg"><div class="grow"><strong>Pijama Monito</strong><small>Pijamas · S/ 70.00 · Stock: 10 · Visible</small></div><button onclick="editProduct('p1793503758376')">Editar</button><button onclick="deleteProduct('p1793503758376')">Eliminar</button></div><div class="admin-product"><img src="https://oqnyusdubmdwnlpasqda.supabase.co/storage/v1/object/public/product-photos/products/p1793504343031/1793504343050-0.jpg"><div class="grow"><strong>Pijama Corazones Lila</strong><small>Pijamas · S/ 60.00 · Stock: 10 · Visible</small></div><button onclick="editProduct('p1793504343031')">Editar</button><button onclick="deleteProduct('p1793504343031')">Eliminar</button></div><div class="admin-product"><img src="https://oqnyusdubmdwnlpasqda.supabase.co/storage/v1/object/public/product-photos/products/p1793740519380/1793740519425-0.jpg"><div class="grow"><strong>Plug Anal Colita</strong><small>Juegos eróticos · S/ 45.00 · Stock: 10 · Visible</small></div><button onclick="editProduct('p1793740519380')">Editar</button><button onclick="deleteProduct('p1793740519380')">Eliminar</button></div><div class="admin-product"><img src="https://oqnyusdubmdwnlpasqda.supabase.co/storage/v1/object/public/product-photos/products/p1793738888647/1793738888680-0.jpg"><div class="grow"><strong>Set Celine Rosa</strong><small>Sets · S/ 65.00 · Stock: 10 · Visible</small></div><button onclick="editProduct('p1793738888647')">Editar</button><button onclick="deleteProduct('p1793738888647')">Eliminar</button></div><div class="admin-product"><img src="https://oqnyusdubmdwnlpasqda.supabase.co/storage/v1/object/public/product-photos/products/p1793503195217/1793503195226-0.jpg"><div class="grow"><strong>Set Raiz Infinita</strong><small>Sets · S/ 65.00 · Stock: 10 · Visible</small></div><button onclick="editProduct('p1793503195217')">Editar</button><button onclick="deleteProduct('p1793503195217')">Eliminar</button></div></div>
@@ -2341,6 +2621,14 @@ glamour.</div><div class="price-row"><span class="price">S/ 70.00</span></div><s
         <div class="modal-actions"><button type="button" class="outline-btn" onclick="cancelProductEdit()">Cancelar</button><button class="solid-btn">Guardar producto</button></div>
       </form>
     </div>
+  </div>
+  <div id="adminCatalogOrder" class="hidden">
+    <div class="catalog-order-heading">
+      <div><strong>Orden del catálogo</strong><p>Organiza los productos tal como quieres que aparezcan en la tienda. Arrastra cada fila o usa los botones para llevarla al inicio, subirla, bajarla o mandarla al final.</p></div>
+      <button type="button" class="solid-btn" onclick="saveCatalogOrder()">Guardar orden</button>
+    </div>
+    <div class="catalog-order-tip">El orden manual será el que vean tus clientas al abrir el catálogo. Puedes seguir usando los filtros de precio y nombre desde la tienda.</div>
+    <div id="adminCatalogOrderList" class="catalog-order-list"></div>
   </div>
   <div id="adminOrders" class="hidden"><strong style="font-family:'Playfair Display',serif;font-size:20px">Pedidos registrados localmente</strong><div id="adminOrderList" style="margin-top:12px"><p style="color:var(--muted);font-size:12px">Todavía no hay pedidos registrados en este navegador.</p></div></div>
   <div id="adminReviews" class="hidden"><strong style="font-family:'Playfair Display',serif;font-size:20px">Revisar reseñas de clientas</strong><div id="adminReviewList" style="margin-top:12px"><p style="color:var(--muted);font-size:12px">Aún no hay reseñas.</p></div></div>
@@ -5083,11 +5371,13 @@ let cloudSession=read("raiz_cloud_session",null),cloudCatalogActive=false;
 let products=read("luna_products",DEFAULT_PRODUCTS);
 const demoProductIds = new Set(["p1","p2","p3","p4","p5","p6","p7","p8"]);
 if (products.length && products.every(p => demoProductIds.has(p.id))) products = [];
-products = products.map(p => ({
+products = products.map((p,index) => ({
   ...p,
   category: normalizeStoreCategory(p.category),
-  images: Array.isArray(p.images) && p.images.length ? p.images : (p.image ? [p.image] : [])
+  images: Array.isArray(p.images) && p.images.length ? p.images : (p.image ? [p.image] : []),
+  catalogOrder: p.catalogOrder!==undefined && p.catalogOrder!==null && p.catalogOrder!=="" && Number.isFinite(Number(p.catalogOrder)) ? Number(p.catalogOrder) : index
 }));
+products = normalizeCatalogOrder(products);
 let reviews=read("luna_reviews",[]);
 let settings=read("luna_settings",{brand:"Raíz Prohibida",whatsapp:"",instagram:"",facebook:"",tiktok:"",shippingText:"Envíos por Shalom y motorizado (según cobertura).",shalom:"Coordinar agencia, costo y tiempo por WhatsApp.",moto:"Consultar cobertura y tarifa por WhatsApp.",adminPassword:""});
 settings.design = Object.assign({
@@ -5383,12 +5673,62 @@ function persist(){
   });
  }
 }
+function normalizeCatalogOrder(items=products){
+ const ordered=(Array.isArray(items)?items:[]).slice().sort((a,b)=>{
+  const ao=a.catalogOrder!==undefined&&a.catalogOrder!==null&&a.catalogOrder!==""&&Number.isFinite(Number(a.catalogOrder))?Number(a.catalogOrder):0;
+  const bo=b.catalogOrder!==undefined&&b.catalogOrder!==null&&b.catalogOrder!==""&&Number.isFinite(Number(b.catalogOrder))?Number(b.catalogOrder):0;
+  return ao-bo;
+ });
+ ordered.forEach((p,index)=>{p.catalogOrder=index});
+ STORE_CATEGORIES.forEach(category=>{
+  const group=ordered.filter(p=>normalizeStoreCategory(p.category)===category);
+  group.sort((a,b)=>{
+   const ai=ordered.indexOf(a),bi=ordered.indexOf(b);
+   const av=a.categoryOrder!==undefined&&a.categoryOrder!==null&&a.categoryOrder!==""&&Number.isFinite(Number(a.categoryOrder))?Number(a.categoryOrder):ai;
+   const bv=b.categoryOrder!==undefined&&b.categoryOrder!==null&&b.categoryOrder!==""&&Number.isFinite(Number(b.categoryOrder))?Number(b.categoryOrder):bi;
+   return av-bv||ai-bi;
+  });
+  group.forEach((p,index)=>{p.categoryOrder=index});
+ });
+ return ordered;
+}
+function getCategoryOrderedProducts(category){
+ const normalized=normalizeCatalogOrder(products);
+ if(category==="Todos")return normalized;
+ return normalized.filter(p=>normalizeStoreCategory(p.category)===category)
+  .sort((a,b)=>Number(a.categoryOrder||0)-Number(b.categoryOrder||0));
+}
+function applyCategoryOrder(category,ordered){
+ const ranks=new Map(ordered.map((p,index)=>[String(p.id),index]));
+ products=products.map(p=>ranks.has(String(p.id))?{...p,categoryOrder:ranks.get(String(p.id))}:p);
+}
+let catalogOrderCategory="Disfraces";
+function setCatalogOrderCategory(category){
+ if(!STORE_CATEGORIES.includes(category))return;
+ catalogOrderCategory=category;
+ renderAdminCatalogOrder();
+}
+function newProductInCategory(category){
+ const selected=normalizeStoreCategory(category);
+ const productsButton=[...document.querySelectorAll(".admin-tabs button")].find(button=>(button.getAttribute("onclick")||"").includes("adminTab('products'"));
+ if(productsButton)adminTab("products",productsButton);
+ newProduct();
+ const form=document.getElementById("productForm");
+ if(form&&form.elements.category)form.elements.category.value=selected;
+ const title=document.getElementById("editorTitle");
+ if(title)title.textContent="Agregar producto · "+selected;
+ const upload=document.getElementById("productImageInput");
+ if(upload)upload.closest(".field")?.scrollIntoView({behavior:"smooth",block:"center"});
+ toast("Completa los datos del producto y añade sus fotografías en «Fotografías del producto».");
+}
 function normalizeStoredProducts(items){
- return (Array.isArray(items)?items:[]).map(p=>({
+ const normalized=(Array.isArray(items)?items:[]).map((p,index)=>({
   ...p,
   category:normalizeStoreCategory(p.category),
-  images:Array.isArray(p.images)&&p.images.length?p.images:(p.image?[p.image]:[])
+  images:Array.isArray(p.images)&&p.images.length?p.images:(p.image?[p.image]:[]),
+  catalogOrder:p.catalogOrder!==undefined && p.catalogOrder!==null && p.catalogOrder!=="" && Number.isFinite(Number(p.catalogOrder)) ? Number(p.catalogOrder) : index
  }));
+ return normalizeCatalogOrder(normalized);
 }
 async function hydrateProductsFromDB(){
  if(cloudIsConfigured()){
@@ -5444,9 +5784,13 @@ function productArt(p,index=0){
 function renderProducts(){
  window.__rpCatalogMotionSeen=window.__rpCatalogMotionSeen||new Set();
  renderChips();
- const q=(document.getElementById("searchInput")?.value||"").toLowerCase().trim(),sort=document.getElementById("sortSelect")?.value||"featured";
+ const q=(document.getElementById("searchInput")?.value||"").toLowerCase().trim(),sort=document.getElementById("sortSelect")?.value||"manual";
  let list=products.filter(p=>p.active!==false&&(currentCategory==="Todos"||p.category===currentCategory)&&(!q||(p.name+" "+p.category+" "+p.description).toLowerCase().includes(q)));
- if(sort==="low")list.sort((a,b)=>a.price-b.price);else if(sort==="high")list.sort((a,b)=>b.price-a.price);else if(sort==="name")list.sort((a,b)=>a.name.localeCompare(b.name));else list.sort((a,b)=>(b.featured?1:0)-(a.featured?1:0));
+ if(sort==="low")list.sort((a,b)=>a.price-b.price);
+ else if(sort==="high")list.sort((a,b)=>b.price-a.price);
+ else if(sort==="name")list.sort((a,b)=>a.name.localeCompare(b.name));
+ else if(sort==="featured")list.sort((a,b)=>(b.featured?1:0)-(a.featured?1:0)||(currentCategory==="Todos"?Number(a.catalogOrder||0)-Number(b.catalogOrder||0):Number(a.categoryOrder||0)-Number(b.categoryOrder||0)));
+ else list.sort((a,b)=>currentCategory==="Todos"?Number(a.catalogOrder||0)-Number(b.catalogOrder||0):Number(a.categoryOrder||0)-Number(b.categoryOrder||0));
  const grid=document.getElementById("productGrid");
  if(!list.length){grid.innerHTML='<div class="empty-state">No encontramos productos con esa búsqueda.<br>Prueba otra palabra o categoría.</div>';return}
  grid.innerHTML=list.map((p,index)=>{
@@ -5693,7 +6037,8 @@ function closeAdmin(){closeModal("adminModal")}
 function adminTab(tab,btn){
  document.querySelectorAll(".admin-tabs button").forEach(x=>x.classList.remove("active"));
  btn.classList.add("active");
- ["products","orders","settings","design","reviews"].forEach(t=>document.getElementById("admin"+t[0].toUpperCase()+t.slice(1)).classList.toggle("hidden",t!==tab));
+ ["products","catalogOrder","orders","settings","design","reviews"].forEach(t=>document.getElementById("admin"+t[0].toUpperCase()+t.slice(1)).classList.toggle("hidden",t!==tab));
+ if(tab==="catalogOrder")renderAdminCatalogOrder();
  if(tab==="design"){renderDesignForm();refreshVisualPreview();}
 }
 let defaultDesignLogos = {header:"",hero:"",footer:""};
@@ -5741,7 +6086,8 @@ function applyVisualOverrides(root,overrides){
  Object.entries(map).forEach(([key,value])=>{
   const el=visualResolveElement(root,key);if(!el||!value)return;
   const isFixedBrandLogo=el.matches("#brandLogoImg,#heroLogoImg,#footerLogoImg,.hero-logo-card,.hero-art");
-  if(!isFixedBrandLogo && (Number.isFinite(Number(value.x))||Number.isFinite(Number(value.y)))){
+  if(isFixedBrandLogo)return;
+  if(Number.isFinite(Number(value.x))||Number.isFinite(Number(value.y))){
    const vx=Number(value.x)||0,vy=Number(value.y)||0;
    el.style.setProperty("translate",`${vx}px ${vy}px`,"important");
    el.dataset.visualX=vx;el.dataset.visualY=vy;
@@ -6141,10 +6487,12 @@ function updateDesignRangeLabels(){
  const motionLabel=document.getElementById("motionSpeedValue");if(motionLabel&&f.elements.motionSpeed)motionLabel.textContent=f.elements.motionSpeed.value+" %";
 }
 function renderAdmin(){
+ products=normalizeCatalogOrder(products);
  document.getElementById("statProducts").textContent=products.filter(p=>p.active!==false).length;
  document.getElementById("statOrders").textContent=orders.length;
  document.getElementById("statCart").textContent=cart.reduce((s,x)=>s+x.qty,0);
  document.getElementById("adminProductList").innerHTML=products.map(p=>`<div class="admin-product">${productImages(p)[0]?`<img src="${productImages(p)[0]}">`:'<div class="mini-art">♡</div>'}<div class="grow"><strong>${esc(p.name)}</strong><small>${esc(p.category)} · ${money(p.price)} · Stock: ${Math.max(0,Number(p.stock)||0)} · ${p.active===false?"Oculto":"Visible"}</small></div><button onclick="editProduct('${p.id}')">Editar</button><button onclick="deleteProduct('${p.id}')">Eliminar</button></div>`).join("")||"<p>No hay productos todavía.</p>";
+ renderAdminCatalogOrder();
  document.getElementById("adminOrderList").innerHTML=orders.map(o=>`<div class="review" style="margin:12px 0"><strong>${esc(o.id)}</strong><p style="font:12px 'DM Sans';margin:7px 0">${esc(o.date)} · ${money(o.total)}</p><small>Envío: ${esc(o.shipping||"Por coordinar")} · Estado: ${esc(o.status)}</small><div style="margin-top:9px"><button class="outline-btn" onclick="setOrderStatus('${o.id}')">Cambiar estado</button></div></div>`).join("")||'<p style="color:var(--muted);font-size:12px">Todavía no hay pedidos registrados en este navegador.</p>';
  const sf=document.querySelector('#adminSettings form');
  sf.elements.brand.value=settings.brand||"";sf.elements.whatsapp.value=settings.whatsapp||"";
@@ -6152,6 +6500,79 @@ function renderAdmin(){
  sf.elements.tiktok.value=settings.tiktok||"";sf.elements.shippingText.value=settings.shippingText||"";
  sf.elements.shalom.value=settings.shalom||"";sf.elements.moto.value=settings.moto||"";renderDesignForm();updateCloudAdminUI();
  document.getElementById("adminReviewList").innerHTML=reviews.map(r=>`<div class="review" style="margin:12px 0"><div class="stars">${"★".repeat(r.rating)}${"☆".repeat(5-r.rating)}</div><p>${esc(r.comment)}</p><small>${esc(r.nickname)} · ${esc(r.date)} · ${r.status==="approved"?"Publicada":"Pendiente"}</small><div style="display:flex;gap:8px;margin-top:10px">${r.status!=="approved"?`<button class="solid-btn" onclick="moderateReview('${r.id}','approve')">Publicar</button>`:""}<button class="outline-btn" onclick="moderateReview('${r.id}','delete')">Eliminar</button></div></div>`).join("")||'<p style="color:var(--muted);font-size:12px">Aún no hay reseñas.</p>';
+}
+function renderAdminCatalogOrder(){
+ const box=document.getElementById("adminCatalogOrderList");if(!box)return;
+ if(!STORE_CATEGORIES.includes(catalogOrderCategory))catalogOrderCategory=STORE_CATEGORIES[0];
+ const category=catalogOrderCategory;
+ const ordered=getCategoryOrderedProducts(category);
+ const categoryTabs=STORE_CATEGORIES.map(name=>{
+  const items=products.filter(p=>normalizeStoreCategory(p.category)===name);
+  const photos=items.reduce((sum,p)=>sum+productImages(p).length,0);
+  return `<button type="button" class="catalog-order-category-tab ${name===category?"active":""}" onclick="setCatalogOrderCategory('${esc(name)}')">
+   <span>${esc(name)}</span><small>${items.length} productos · ${photos} fotos</small>
+  </button>`;
+ }).join("");
+ box.innerHTML=`
+  <div class="catalog-order-category-tabs" role="tablist" aria-label="Categorías del catálogo">${categoryTabs}</div>
+  <div class="catalog-order-category-head">
+   <div><strong>${esc(category)}</strong><small>Organiza únicamente los productos de esta categoría. El orden de las otras categorías no cambiará.</small></div>
+   <button type="button" class="solid-btn" onclick="newProductInCategory('${esc(category)}')">＋ Agregar producto y subir fotos</button>
+  </div>
+  <div class="catalog-order-tip">Añade un producto con sus fotografías y luego ordénalo aquí. Usa las flechas para moverlo al primero o al último, o arrastra la fila. Pulsa «Guardar orden» para publicarlo en la tienda.</div>
+  ${ordered.length?ordered.map((p,index)=>`<article class="catalog-order-row" draggable="true" data-order-id="${esc(p.id)}" data-order-category="${esc(category)}" ondragstart="startCatalogDrag(event,'${esc(p.id)}')" ondragover="allowCatalogDrop(event)" ondrop="dropCatalogProduct(event,'${esc(p.id)}')" ondragend="endCatalogDrag(event)">
+   <span class="catalog-order-number">${index+1}</span>
+   <span class="catalog-order-grip" aria-hidden="true">⠿</span>
+   ${productImages(p)[0]?`<img src="${productImages(p)[0]}" alt="">`:'<span class="catalog-order-placeholder">♡</span>'}
+   <div class="catalog-order-copy"><strong>${esc(p.name)}</strong><small>${money(p.price)} · ${productImages(p).length} foto(s) · ${p.active===false?"Oculto":"Visible"}</small></div>
+   <div class="catalog-order-actions">
+    <button type="button" onclick="moveCatalogProduct('${esc(p.id)}','first')" ${index===0?"disabled":""} title="Mover al primero" aria-label="Mover ${esc(p.name)} al primero">⇈</button>
+    <button type="button" onclick="moveCatalogProduct('${esc(p.id)}','up')" ${index===0?"disabled":""} title="Subir una posición" aria-label="Subir ${esc(p.name)}">↑</button>
+    <button type="button" onclick="moveCatalogProduct('${esc(p.id)}','down')" ${index===ordered.length-1?"disabled":""} title="Bajar una posición" aria-label="Bajar ${esc(p.name)}">↓</button>
+    <button type="button" onclick="moveCatalogProduct('${esc(p.id)}','last')" ${index===ordered.length-1?"disabled":""} title="Mover al último" aria-label="Mover ${esc(p.name)} al último">⇊</button>
+    <button type="button" onclick="editProduct('${esc(p.id)}')" title="Editar producto y fotografías" aria-label="Editar ${esc(p.name)}">✎</button>
+   </div>
+  </article>`).join(""):'<div class="catalog-order-empty">Todavía no hay productos en '+esc(category)+'. Pulsa «Agregar producto y subir fotos» para comenzar.</div>'}
+ `;
+}
+function moveCatalogProduct(id,direction){
+ const category=catalogOrderCategory;
+ const ordered=getCategoryOrderedProducts(category),from=ordered.findIndex(p=>String(p.id)===String(id));
+ if(from<0)return;
+ let to=from;
+ if(direction==="first")to=0;
+ else if(direction==="last")to=ordered.length-1;
+ else if(direction==="up")to=Math.max(0,from-1);
+ else if(direction==="down")to=Math.min(ordered.length-1,from+1);
+ if(to===from)return;
+ const [item]=ordered.splice(from,1);ordered.splice(to,0,item);
+ applyCategoryOrder(category,ordered);persist();renderAdminCatalogOrder();renderProducts();
+}
+let draggedCatalogProductId="";
+function startCatalogDrag(event,id){
+ draggedCatalogProductId=String(id);event.dataTransfer.effectAllowed="move";
+ event.dataTransfer.setData("text/plain",draggedCatalogProductId);
+ event.currentTarget.classList.add("catalog-order-dragging");
+}
+function allowCatalogDrop(event){event.preventDefault();if(event.dataTransfer)event.dataTransfer.dropEffect="move"}
+function dropCatalogProduct(event,targetId){
+ event.preventDefault();
+ const dragged=draggedCatalogProductId||event.dataTransfer?.getData("text/plain")||"";
+ if(!dragged||dragged===String(targetId))return;
+ const category=catalogOrderCategory,ordered=getCategoryOrderedProducts(category);
+ const from=ordered.findIndex(p=>String(p.id)===dragged),to=ordered.findIndex(p=>String(p.id)===String(targetId));
+ if(from<0||to<0)return;
+ const [item]=ordered.splice(from,1);ordered.splice(to,0,item);
+ applyCategoryOrder(category,ordered);persist();renderAdminCatalogOrder();renderProducts();
+ toast("Orden de "+category+" actualizado. Pulsa «Guardar orden» para publicarlo.");
+}
+function endCatalogDrag(event){event.currentTarget.classList.remove("catalog-order-dragging");draggedCatalogProductId=""}
+async function saveCatalogOrder(){
+ products=normalizeCatalogOrder(products);persist();renderAdminCatalogOrder();renderProducts();
+ if(cloudSession?.access_token){
+  try{await cloudSyncProducts();toast("Orden de las categorías guardado y publicado para todas tus clientas.")}
+  catch(err){toast("Orden guardado en este navegador, pero no se pudo publicar: "+err.message)}
+ }else toast("Orden guardado en este navegador. Inicia sesión en Supabase para compartirlo con tus clientas.");
 }
 function setOrderStatus(id){const o=orders.find(x=>x.id===id);if(!o)return;const s=prompt("Nuevo estado: Pendiente, Confirmado, Preparando, Enviado o Entregado",o.status);if(s){o.status=s;persist();renderAdmin()}}
 const MAX_PRODUCT_IMAGES=50;
@@ -6604,7 +7025,11 @@ async function saveProduct(e){
  const hasColors=f.elements.hasColors.checked;
  const colors=hasColors?parseProductColors(d.get("colors")):[];
  if(hasColors&&!colors.length){toast("Agrega al menos un color o desactiva la opción de colores.");return}
- const p={id,name:d.get("name").trim(),category:d.get("category"),price:Number(d.get("price")),oldPrice:Number(d.get("oldPrice"))||0,
+ const selectedCategory=normalizeStoreCategory(d.get("category"));
+ const sameCategory=!!old&&normalizeStoreCategory(old.category)===selectedCategory;
+ const categoryOrder=sameCategory&&old.categoryOrder!==undefined&&old.categoryOrder!==null&&old.categoryOrder!==""&&Number.isFinite(Number(old.categoryOrder))
+  ?Number(old.categoryOrder):products.filter(x=>x.id!==id&&normalizeStoreCategory(x.category)===selectedCategory).length;
+ const p={id,catalogOrder:old&&Number.isFinite(Number(old.catalogOrder))?Number(old.catalogOrder):0,categoryOrder,name:d.get("name").trim(),category:selectedCategory,price:Number(d.get("price")),oldPrice:Number(d.get("oldPrice"))||0,
  sizes:(d.get("sizes")||"").split(",").map(x=>x.trim()).filter(Boolean),stock:Math.max(0,Number(d.get("stock"))||0),
  hasColors,colors,
  description:d.get("description")||"",featured:f.elements.featured.checked,active:f.elements.active.checked,
@@ -6615,13 +7040,14 @@ async function saveProduct(e){
  images:currentImages.slice(),image:currentImages[0]||""};
  if(!p.sizes.length)p.sizes=[];
  if(old)products=products.map(x=>x.id===id?p:x);else products.unshift(p);
+ products=normalizeCatalogOrder(products);
  persist();renderProducts();renderAdmin();cancelProductEdit();
  if(cloudSession?.access_token){try{await cloudSyncProducts();toast("Producto y fotografías publicados para todas las clientas.")}catch(err){toast("Producto guardado localmente, pero no se publicó: "+err.message)}}
  else toast("Producto guardado en este navegador. Inicia sesión en Supabase para publicarlo en internet.");
 }
 async function deleteProduct(id){
  if(!confirm("¿Eliminar este producto del catálogo?"))return;
- products=products.filter(p=>p.id!==id);cart=cart.filter(x=>x.id!==id);persist();renderProducts();renderAdmin();updateCartCount();
+ products=normalizeCatalogOrder(products.filter(p=>p.id!==id));cart=cart.filter(x=>x.id!==id);persist();renderProducts();renderAdmin();updateCartCount();
  if(cloudSession?.access_token){try{await cloudDeleteProduct(id);toast("Producto eliminado también de la nube.")}catch(err){toast("Eliminado localmente, pero no se pudo eliminar en la nube: "+err.message)}}
  else toast("Producto eliminado en este navegador. Inicia sesión en Supabase para sincronizar.");
 }
