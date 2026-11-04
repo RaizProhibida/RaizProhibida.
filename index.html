@@ -2228,6 +2228,396 @@ body.rp-motion-enabled .hero-art.rp-motion-target.rp-motion-visible{
 }
 </style>
 
+
+<style id="raizProhibidaProfessionalMotionV13">
+:root{
+ --rp-luxury-ease:cubic-bezier(.22,.61,.36,1);
+ --rp-luxury-rose:rgba(194,24,120,.16);
+}
+@keyframes rp13AnnouncementSweep{
+ 0%,100%{background-position:100% 50%}
+ 50%{background-position:0% 50%}
+}
+@keyframes rp13GlassAura{
+ 0%,100%{box-shadow:0 5px 22px rgba(53,24,43,.035);border-color:rgba(234,223,231,.75)}
+ 50%{box-shadow:0 13px 34px rgba(194,24,120,.13);border-color:rgba(194,24,120,.2)}
+}
+@keyframes rp13LogoGlow{
+ 0%,100%{filter:drop-shadow(0 2px 5px rgba(194,24,120,.035));opacity:1}
+ 50%{filter:drop-shadow(0 7px 18px rgba(194,24,120,.23));opacity:.99}
+}
+@keyframes rp13HeroAura{
+ 0%,100%{box-shadow:inset 0 0 0 1px rgba(255,255,255,.45),0 12px 34px rgba(194,24,120,.035)}
+ 50%{box-shadow:inset 0 0 0 1px rgba(255,255,255,.8),0 18px 48px rgba(194,24,120,.12)}
+}
+@keyframes rp13HeroLight{
+ 0%,100%{background-position:100% 50%}
+ 50%{background-position:0% 50%}
+}
+@keyframes rp13TextAura{
+ 0%,100%{text-shadow:0 0 0 rgba(194,24,120,0)}
+ 50%{text-shadow:0 3px 19px rgba(194,24,120,.2)}
+}
+@keyframes rp13SoftBreath{
+ 0%,100%{opacity:.88}
+ 50%{opacity:1}
+}
+@keyframes rp13IconBreath{
+ 0%,100%{scale:1;filter:drop-shadow(0 1px 2px rgba(194,24,120,.035))}
+ 50%{scale:1.075;filter:drop-shadow(0 5px 10px rgba(194,24,120,.18))}
+}
+@keyframes rp13CardAura{
+ 0%,100%{box-shadow:0 7px 22px rgba(53,24,43,.035);border-color:rgba(234,223,231,.84)}
+ 50%{box-shadow:0 16px 38px rgba(194,24,120,.12);border-color:rgba(194,24,120,.24)}
+}
+@keyframes rp13ButtonAura{
+ 0%,100%{box-shadow:0 4px 13px rgba(194,24,120,.055)}
+ 50%{box-shadow:0 10px 27px rgba(194,24,120,.2)}
+}
+@keyframes rp13ButtonShine{
+ 0%{background-position:150% 50%}
+ 100%{background-position:-150% 50%}
+}
+@keyframes rp13StarTwinkle{
+ 0%,100%{opacity:.68;scale:.96}
+ 50%{opacity:1;scale:1.1}
+}
+@keyframes rp13FaqReveal{
+ 0%{opacity:0;translate:0 9px;filter:blur(2px)}
+ 100%{opacity:1;translate:0 0;filter:blur(0)}
+}
+@keyframes rp13OrderSave{
+ 0%,100%{box-shadow:0 6px 18px rgba(194,24,120,.12)}
+ 50%{box-shadow:0 10px 30px rgba(194,24,120,.3)}
+}
+@keyframes rp13ScrollGlow{
+ 0%,100%{opacity:.8}
+ 50%{opacity:1}
+}
+
+/* Entradas al desplazarse: transiciones separadas de los bucles de luz. */
+.rp-luxury-reveal{opacity:1;translate:0 0;filter:none}
+.rp-luxury-reveal.rp-luxury-pending{
+ opacity:0;
+ translate:0 22px;
+ filter:blur(4px);
+}
+.rp-luxury-reveal.rp-luxury-visible{
+ opacity:1;
+ translate:0 0;
+ filter:blur(0);
+ transition:opacity 1.05s var(--rp-luxury-ease),translate 1.05s var(--rp-luxury-ease),filter 1.05s var(--rp-luxury-ease);
+ transition-delay:var(--rp-luxury-delay,0ms);
+}
+
+/* Cabecera y marca: efectos permanentes, con el emblema inmóvil. */
+html body .announcement{
+ background-image:linear-gradient(105deg,#19171b 0%,#30212b 34%,#74445f 50%,#30212b 68%,#19171b 100%)!important;
+ background-size:240% 100%!important;
+ animation:rp13AnnouncementSweep 26s ease-in-out infinite!important;
+}
+html body.rp-motion-enabled .site-header.rp-motion-target.rp-motion-visible{
+ animation:rp13GlassAura 22s ease-in-out infinite!important;
+ animation-duration:22s!important;animation-iteration-count:infinite!important;
+}
+html body .brand-logo,
+html body #brandLogoImg,
+html body #heroLogoImg,
+html body #footerLogoImg{
+ animation:rp13LogoGlow 15s ease-in-out infinite!important;
+ animation-duration:15s!important;animation-iteration-count:infinite!important;
+ transform:none!important;translate:0 0!important;
+}
+html body.rp-motion-enabled .hero-panel.rp-motion-target.rp-motion-visible{
+ background-image:linear-gradient(115deg,#fff 0%,#fff7fb 42%,#f8dced 70%,#fff 100%)!important;
+ background-size:220% 180%!important;
+ animation:rp13HeroLight 30s ease-in-out infinite,rp13HeroAura 19s ease-in-out infinite!important;
+ animation-duration:30s,19s!important;animation-iteration-count:infinite,infinite!important;
+}
+html body.rp-motion-enabled .hero-brand-title.rp-motion-target.rp-motion-visible{
+ animation:rp13TextAura 18s ease-in-out infinite!important;
+ animation-duration:18s!important;animation-iteration-count:infinite!important;
+}
+html body.rp-motion-enabled .hero-slogan.rp-motion-target.rp-motion-visible{
+ animation:rp13SoftBreath 16s ease-in-out infinite!important;
+ animation-duration:16s!important;animation-iteration-count:infinite!important;
+}
+html body .hero-logo-card{
+ animation:rp13HeroAura 20s ease-in-out infinite!important;
+ animation-duration:20s!important;animation-iteration-count:infinite!important;
+ transform:none!important;translate:0 0!important;
+}
+html body .hero-orbit{
+ animation:rpFinalOrbit 95s linear infinite!important;
+ animation-duration:95s!important;animation-iteration-count:infinite!important;
+}
+
+/* Botones y navegación: brillo sutil, respuesta rápida al toque. */
+html body .nav a{
+ position:relative;
+ transition:color .7s ease,letter-spacing .7s ease!important;
+}
+html body .nav a:after{
+ content:"";position:absolute;left:0;right:0;bottom:-7px;height:1px;
+ background:linear-gradient(90deg,transparent,#ed2c9b,transparent);
+ transform:scaleX(0);transform-origin:center;
+ transition:transform .75s var(--rp-luxury-ease)!important;
+}
+html body .nav a:hover:after{transform:scaleX(1)}
+html body .solid-btn{
+ background-image:linear-gradient(105deg,var(--rose-dark) 0%,#d72b8b 38%,#f07fbd 50%,#d72b8b 62%,var(--rose-dark) 100%)!important;
+ background-size:230% 100%!important;
+ animation:rp13ButtonShine 14s ease-in-out infinite,rp13ButtonAura 12s ease-in-out infinite!important;
+ animation-duration:14s,12s!important;animation-iteration-count:infinite,infinite!important;
+ transition:transform .55s var(--rp-luxury-ease),box-shadow .55s ease,filter .55s ease!important;
+}
+html body .solid-btn:hover{
+ transform:translateY(-3px) scale(1.018)!important;
+ filter:saturate(1.08)!important;
+ box-shadow:0 13px 30px rgba(194,24,120,.22)!important;
+}
+html body .outline-btn,html body .icon-btn,html body .chip,html body .size-option{
+ transition:transform .6s var(--rp-luxury-ease),box-shadow .6s ease,border-color .6s ease,background .6s ease!important;
+}
+html body .outline-btn:hover,html body .icon-btn:hover,html body .chip:hover,html body .size-option:hover{
+ transform:translateY(-2px)!important;box-shadow:0 9px 22px rgba(194,24,120,.1)!important;
+}
+
+/* Beneficios, categorías, reseñas y contenido editorial. */
+html body.rp-motion-enabled .benefit.rp-motion-target.rp-motion-visible,
+html body.rp-motion-enabled .category-card.rp-motion-target.rp-motion-visible,
+html body.rp-motion-enabled .review-form.rp-motion-target.rp-motion-visible,
+html body.rp-motion-enabled .faq-item.rp-motion-target.rp-motion-visible,
+html body.rp-motion-enabled .footer.rp-motion-target.rp-motion-visible,
+html body.rp-motion-enabled .stat.rp-motion-target.rp-motion-visible,
+html body.rp-motion-enabled .design-admin-section.rp-motion-target.rp-motion-visible,
+html body.rp-motion-enabled .cloud-setup-panel.rp-motion-target.rp-motion-visible,
+html body.rp-motion-enabled .visual-editor-panel.rp-motion-target.rp-motion-visible,
+html body.rp-motion-enabled .admin-live-card.rp-motion-target.rp-motion-visible{
+ animation:rp13CardAura 22s ease-in-out infinite!important;
+ animation-duration:22s!important;animation-iteration-count:infinite!important;
+}
+html body.rp-motion-enabled .section-head.rp-motion-target.rp-motion-visible h2{
+ animation:rp13TextAura 19s ease-in-out infinite!important;
+ animation-duration:19s!important;animation-iteration-count:infinite!important;
+}
+html body.rp-motion-enabled .benefit-icon,
+html body .category-card .symbol,
+html body .stars,
+html body .socials a svg{
+ display:inline-block;
+ animation:rp13IconBreath 12s ease-in-out infinite!important;
+ animation-duration:12s!important;animation-iteration-count:infinite!important;
+}
+html body .benefit:nth-child(2),html body .category-card:nth-child(2){animation-delay:1.2s!important}
+html body .benefit:nth-child(3),html body .category-card:nth-child(3){animation-delay:2.4s!important}
+html body .benefit:nth-child(4),html body .category-card:nth-child(4){animation-delay:3.6s!important}
+html body .category-card{
+ position:relative;isolation:isolate;overflow:hidden;
+ transition:transform .8s var(--rp-luxury-ease),box-shadow .8s ease,border-color .8s ease!important;
+}
+html body .category-card:before{
+ content:"";position:absolute;z-index:-1;inset:-40% auto -40% -70%;width:45%;
+ background:linear-gradient(90deg,transparent,rgba(255,255,255,.68),transparent);
+ transform:skewX(-18deg);transition:left 1.1s var(--rp-luxury-ease);
+ pointer-events:none;
+}
+html body .category-card:hover:before{left:130%}
+html body .category-card:hover{
+ transform:translateY(-7px) scale(1.018)!important;
+ box-shadow:0 18px 42px rgba(194,24,120,.14)!important;
+}
+html body .promo-inner{
+ background-image:linear-gradient(110deg,#19171b 0%,#30212b 40%,#70415d 55%,#19171b 100%)!important;
+ background-size:230% 100%!important;
+ animation:rp13AnnouncementSweep 28s ease-in-out infinite,rp13HeroAura 20s ease-in-out infinite!important;
+ animation-duration:28s,20s!important;animation-iteration-count:infinite,infinite!important;
+}
+html body .promo-inner h2{animation:rp13TextAura 18s ease-in-out infinite!important;animation-iteration-count:infinite!important}
+html body .review-grid>*{
+ transition:transform .75s var(--rp-luxury-ease),box-shadow .75s ease,border-color .75s ease!important;
+}
+html body .review-grid>*:hover{transform:translateY(-5px)!important;box-shadow:0 15px 34px rgba(194,24,120,.11)!important}
+html body .faq-item.open .faq-answer{animation:rp13FaqReveal .75s ease-out both!important}
+
+/* Catálogo: entrada breve, zoom de fotografía y microinteracciones sin bucles invasivos. */
+html body #productGrid .product-card{
+ transition:transform .75s var(--rp-luxury-ease),box-shadow .75s ease,border-color .75s ease!important;
+}
+html body #productGrid .product-card:hover{
+ transform:translateY(-7px) scale(1.012)!important;
+ box-shadow:0 18px 38px rgba(45,20,36,.13)!important;
+ border-color:rgba(194,24,120,.28)!important;
+}
+html body #productGrid .product-image{overflow:hidden}
+html body #productGrid .product-image img{
+ transition:transform 1.05s var(--rp-luxury-ease),filter 1.05s ease!important;
+}
+html body #productGrid .product-card:hover .product-image img{
+ transform:scale(1.075)!important;filter:saturate(1.08) contrast(1.015)!important;
+}
+html body #productGrid .heart{
+ transition:transform .45s ease,background .45s ease,color .45s ease!important;
+}
+html body #productGrid .product-card:hover .heart{transform:scale(1.08)!important}
+html body #productGrid .heart.active{animation:rp13IconBreath 3s ease-in-out infinite!important;animation-iteration-count:infinite!important}
+html body #productGrid .product-tag{backdrop-filter:blur(8px);box-shadow:0 5px 14px rgba(35,20,30,.08)}
+html body #productGrid .product-actions button{
+ transition:transform .5s ease,box-shadow .5s ease,filter .5s ease!important;
+}
+html body #productGrid .product-actions button:hover:not(:disabled){
+ transform:translateY(-2px)!important;box-shadow:0 8px 18px rgba(194,24,120,.13)!important;
+}
+
+/* Pie de página, redes, WhatsApp y panel administrativo. */
+html body.rp-motion-enabled .socials a.rp-motion-target.rp-motion-visible{
+ animation:rp13CardAura 18s ease-in-out infinite!important;
+ animation-duration:18s!important;animation-iteration-count:infinite!important;
+}
+html body .footer{
+ background-image:linear-gradient(110deg,#fff1f8 0%,#fff8fc 45%,#f8e6f0 70%,#fff1f8 100%)!important;
+ background-size:220% 100%!important;
+}
+html body .socials a{
+ transition:transform .65s ease,box-shadow .65s ease!important;
+}
+html body .socials a:hover{transform:translateY(-4px) rotate(5deg) scale(1.08)!important}
+html body .wa-float{
+ animation:rp13ButtonAura 9s ease-in-out infinite!important;
+ animation-duration:9s!important;animation-iteration-count:infinite!important;
+}
+html body .modal-backdrop.show .modal{animation:rp13FaqReveal .6s ease-out both!important}
+html body .catalog-order-row{
+ transition:transform .55s var(--rp-luxury-ease),border-color .55s ease,box-shadow .55s ease!important;
+}
+html body .catalog-order-row:hover{
+ transform:translateX(3px)!important;box-shadow:0 10px 27px rgba(194,24,120,.11)!important;
+}
+html body .catalog-order-actions button:hover:not(:disabled){transform:scale(1.09)!important}
+html body .admin-product:hover{background:#fff8fc;border-radius:12px;padding-left:8px;padding-right:8px;transition:all .5s ease}
+
+/* Estado de guardado claro y visible en el administrador. */
+.catalog-order-save-status{
+ display:flex;align-items:center;gap:8px;margin-top:10px;
+ width:fit-content;max-width:100%;padding:8px 11px;
+ border:1px solid #e9d7e2;border-radius:999px;
+ background:#fff;color:#6f5967;font:500 11px/1.4 'DM Sans',sans-serif;
+}
+.catalog-order-status-dot{width:8px;height:8px;flex:0 0 8px;border-radius:50%;background:#3b9b68;box-shadow:0 0 0 4px rgba(59,155,104,.1)}
+.catalog-order-save-status[data-state="pending"]{background:#fff8e9;border-color:#ead6a9;color:#805a1d}
+.catalog-order-save-status[data-state="pending"] .catalog-order-status-dot{background:#d69b2d;box-shadow:0 0 0 4px rgba(214,155,45,.13)}
+.catalog-order-save-status[data-state="saving"]{background:#f6effb;border-color:#dfc6ed;color:#74428b}
+.catalog-order-save-status[data-state="saving"] .catalog-order-status-dot{background:#a65ac8;box-shadow:0 0 0 4px rgba(166,90,200,.14);animation:rp13SoftBreath 1.2s ease-in-out infinite}
+.catalog-order-category-actions{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.catalog-order-category-actions button{white-space:nowrap}
+#saveCatalogOrderButton,#saveCatalogOrderInlineButton{
+ min-width:142px;animation:rp13OrderSave 10s ease-in-out infinite!important;
+ animation-iteration-count:infinite!important;
+}
+#saveCatalogOrderButton:disabled,#saveCatalogOrderInlineButton:disabled{opacity:.72;cursor:wait;animation:none!important}
+.catalog-order-category-head{align-items:center}
+.catalog-order-category-head .catalog-order-category-actions{flex:0 0 auto}
+@media(max-width:760px){
+ .catalog-order-category-actions{display:grid;grid-template-columns:1fr 1fr;width:100%}
+ .catalog-order-category-actions button{white-space:normal;min-height:42px}
+ #saveCatalogOrderButton{width:100%}
+}
+@media(max-width:520px){
+ .catalog-order-save-status{border-radius:12px;align-items:flex-start}
+ .catalog-order-category-actions{grid-template-columns:1fr}
+}
+
+/* Barra de progreso de lectura: detalle pequeño de una tienda premium. */
+#rpLuxuryScrollProgress{
+ position:fixed;z-index:9999;left:0;top:0;width:100%;height:3px;
+ transform:scaleX(0);transform-origin:left center;
+ background:linear-gradient(90deg,#c21878,#ed2c9b,#e9b4d2);
+ box-shadow:0 0 12px rgba(194,24,120,.35);
+ pointer-events:none;will-change:transform;
+}
+
+/* En equipos con movimiento reducido, el contenido sigue visible y las transiciones se suavizan. */
+@media(prefers-reduced-motion:reduce){
+ .rp-luxury-reveal.rp-luxury-pending{opacity:1!important;translate:0 0!important;filter:none!important}
+ .rp-luxury-reveal,.rp-luxury-reveal.rp-luxury-visible{transition:none!important}
+ #rpLuxuryScrollProgress{display:none!important}
+}
+</style>
+
+
+<style id="raizProhibidaTapFeedbackV13">
+@keyframes rp13TapFeedback{0%{scale:1}38%{scale:.965}100%{scale:1}}
+html body .rp-luxury-tap{animation:rp13TapFeedback .48s cubic-bezier(.22,.61,.36,1) both!important}
+@media(prefers-reduced-motion:reduce){html body .rp-luxury-tap{animation:none!important}}
+</style>
+
+
+<style id="raizProhibidaProfessionalMotionFixV13">
+/* El reveal debe ganar a las reglas globales de visibilidad del sistema anterior. */
+html body.rp-motion-enabled .rp-motion-target.rp-luxury-reveal.rp-luxury-pending{
+ opacity:0!important;visibility:visible!important;
+ translate:0 22px!important;filter:blur(4px)!important;
+}
+html body.rp-motion-enabled .rp-motion-target.rp-luxury-reveal.rp-luxury-visible{
+ opacity:1!important;visibility:visible!important;
+ translate:0 0!important;filter:blur(0)!important;
+ transition:opacity 1.05s var(--rp-luxury-ease),translate 1.05s var(--rp-luxury-ease),filter 1.05s var(--rp-luxury-ease)!important;
+ transition-delay:var(--rp-luxury-delay,0ms)!important;
+}
+/* Refuerza la animación continua en la franja, incluso tras el reveal inicial. */
+html body.rp-motion-enabled .announcement.rp-motion-target.rp-motion-visible{
+ animation:rp13AnnouncementSweep 26s ease-in-out infinite!important;
+ animation-duration:26s!important;animation-iteration-count:infinite!important;
+}
+html body .floating-note{
+ animation:rp13CardAura 20s ease-in-out infinite!important;
+ animation-duration:20s!important;animation-iteration-count:infinite!important;
+}
+html body .review{
+ animation:rp13CardAura 22s ease-in-out infinite!important;
+ animation-duration:22s!important;animation-iteration-count:infinite!important;
+}
+html body .brand-slogan,html body .footer-slogan{
+ animation:rp13SoftBreath 18s ease-in-out infinite!important;
+ animation-duration:18s!important;animation-iteration-count:infinite!important;
+}
+html body .faq-toggle-icon{
+ transition:background .65s ease,color .65s ease,scale .65s ease!important;
+}
+html body .faq-item.open .faq-toggle-icon{
+ animation:rp13IconBreath 3.2s ease-in-out infinite!important;
+ animation-duration:3.2s!important;animation-iteration-count:infinite!important;
+}
+@media(prefers-reduced-motion:reduce){
+ html body.rp-motion-enabled .rp-motion-target.rp-luxury-reveal.rp-luxury-pending{
+  opacity:1!important;visibility:visible!important;translate:0 0!important;filter:none!important;
+ }
+ html body.rp-motion-enabled .rp-motion-target.rp-luxury-reveal.rp-luxury-visible{
+  transition:none!important;
+ }
+}
+</style>
+
+
+<style id="raizProhibidaPremiumButtonMotionV13">
+html body .hero-buttons .solid-btn,
+html body .promo-inner .solid-btn,
+html body button.solid-btn:not(#saveCatalogOrderButton):not(#saveCatalogOrderInlineButton){
+ background-image:linear-gradient(105deg,var(--rose-dark) 0%,#d72b8b 38%,#f18bc4 50%,#d72b8b 62%,var(--rose-dark) 100%)!important;
+ background-size:230% 100%!important;
+ animation:rp13ButtonShine 14s ease-in-out infinite,rp13ButtonAura 12s ease-in-out infinite!important;
+ animation-duration:14s,12s!important;
+ animation-iteration-count:infinite,infinite!important;
+}
+html body .hero-buttons .solid-btn:hover,
+html body .promo-inner .solid-btn:hover,
+html body button.solid-btn:not(#saveCatalogOrderButton):not(#saveCatalogOrderInlineButton):hover{
+ transform:translateY(-3px) scale(1.018)!important;
+ filter:saturate(1.08)!important;
+ box-shadow:0 13px 30px rgba(194,24,120,.22)!important;
+}
+</style>
+
 </head>
 <body style="" class="rp-motion-enabled">
 <div class="announcement rp-motion-target rp-effect-up rp-motion-visible" id="announcementText" data-rp-motion-ready="1" style="--rp-stagger: 0ms;">Raíz Prohibida · Envíos a todo el Perú · Atención personalizada · Juguetes eróticos: +18</div>
@@ -2736,8 +3126,8 @@ glamour.</div><div class="price-row"><span class="price">S/ 70.00</span></div><s
   </div>
   <div id="adminCatalogOrder" class="hidden">
     <div class="catalog-order-heading">
-      <div><strong>Orden del catálogo</strong><p>Organiza los productos tal como quieres que aparezcan en la tienda. Arrastra cada fila o usa los botones para llevarla al inicio, subirla, bajarla o mandarla al final.</p></div>
-      <button type="button" class="solid-btn" onclick="saveCatalogOrder()">Guardar orden</button>
+      <div><strong>Orden del catálogo</strong><p>Organiza los productos tal como quieres que aparezcan en la tienda. Arrastra cada fila o usa los botones para llevarla al inicio, subirla, bajarla o mandarla al final.</p><div id="catalogOrderSaveStatus" class="catalog-order-save-status" data-state="saved"><span class="catalog-order-status-dot" aria-hidden="true"></span><span>El orden está guardado.</span></div></div>
+      <button id="saveCatalogOrderButton" type="button" class="solid-btn" onclick="saveCatalogOrder()">Guardar orden</button>
     </div>
     <div class="catalog-order-tip">El orden manual será el que vean tus clientas al abrir el catálogo. Puedes seguir usando los filtros de precio y nombre desde la tienda.</div>
     <div id="adminCatalogOrderList" class="catalog-order-list">
@@ -5838,6 +6228,16 @@ async function cloudSyncProducts(){
   },true);
  }
  products=converted;persist();renderProducts();renderAdmin();
+ try{
+  const orderSnapshot=readCatalogOrderSnapshot();
+  if(orderSnapshot?.pendingPublish===true){
+   orderSnapshot.pendingPublish=false;
+   orderSnapshot.publishedAt=new Date().toISOString();
+   localStorage.setItem(CATALOG_ORDER_STORAGE_KEY,JSON.stringify(orderSnapshot));
+   catalogOrderDirty=false;
+   catalogOrderSaveMessage="¡Orden publicado correctamente para tus clientas!";
+  }
+ }catch(snapshotError){console.warn("No se pudo actualizar el estado local del orden publicado",snapshotError)}
  return converted.length;
 }
 function cloudPublicSettings(){
@@ -6029,6 +6429,71 @@ function newProductInCategory(category){
  if(upload)upload.closest(".field")?.scrollIntoView({behavior:"smooth",block:"center"});
  toast("Completa los datos del producto y añade sus fotografías en «Fotografías del producto».");
 }
+const CATALOG_ORDER_STORAGE_KEY="rp_catalog_order_v1";
+let catalogOrderDirty=false;
+let catalogOrderSaving=false;
+let catalogOrderSaveMessage="El orden está guardado.";
+
+function readCatalogOrderSnapshot(){
+ try{
+  const raw=localStorage.getItem(CATALOG_ORDER_STORAGE_KEY);
+  return raw?JSON.parse(raw):null;
+ }catch(err){return null}
+}
+function writeCatalogOrderSnapshot(pendingPublish=true){
+ const snapshot={
+  version:1,
+  pendingPublish:!!pendingPublish,
+  savedAt:new Date().toISOString(),
+  items:products.map(p=>({
+   id:String(p.id),
+   category:normalizeStoreCategory(p.category),
+   catalogOrder:Number.isFinite(Number(p.catalogOrder))?Number(p.catalogOrder):0,
+   categoryOrder:Number.isFinite(Number(p.categoryOrder))?Number(p.categoryOrder):0
+  }))
+ };
+ localStorage.setItem(CATALOG_ORDER_STORAGE_KEY,JSON.stringify(snapshot));
+ return snapshot;
+}
+function applyPendingLocalCatalogOrder(items){
+ const snapshot=readCatalogOrderSnapshot();
+ if(!snapshot||snapshot.pendingPublish!==true||!Array.isArray(snapshot.items))return items;
+ const saved=new Map(snapshot.items.map(item=>[String(item.id),item]));
+ const merged=items.map(p=>{
+  const rank=saved.get(String(p.id));
+  if(!rank||normalizeStoreCategory(p.category)!==rank.category)return p;
+  return {
+   ...p,
+   catalogOrder:Number.isFinite(Number(rank.catalogOrder))?Number(rank.catalogOrder):p.catalogOrder,
+   categoryOrder:Number.isFinite(Number(rank.categoryOrder))?Number(rank.categoryOrder):p.categoryOrder
+  };
+ });
+ catalogOrderDirty=true;
+ catalogOrderSaveMessage="Tienes un orden guardado en este dispositivo pendiente de publicar en la tienda.";
+ return merged;
+}
+function updateCatalogOrderSaveUI(){
+ const status=document.getElementById("catalogOrderSaveStatus");
+ const state=catalogOrderSaving?"saving":catalogOrderDirty?"pending":"saved";
+ const message=catalogOrderSaving
+  ?"Guardando el orden de las cuatro categorías…"
+  :catalogOrderDirty
+   ?"Hay cambios pendientes. Guarda el orden para publicarlo en la tienda."
+   :(catalogOrderSaveMessage||"El orden está guardado.");
+ if(status){
+  status.dataset.state=state;
+  status.innerHTML=`<span class="catalog-order-status-dot" aria-hidden="true"></span><span>${esc(message)}</span>`;
+ }
+ ["saveCatalogOrderButton","saveCatalogOrderInlineButton"].forEach(id=>{
+  const button=document.getElementById(id);
+  if(button){
+   button.disabled=catalogOrderSaving;
+   button.textContent=catalogOrderSaving?"Guardando…":"Guardar orden";
+   button.setAttribute("aria-busy",catalogOrderSaving?"true":"false");
+  }
+ });
+}
+
 function normalizeStoredProducts(items){
  const normalized=(Array.isArray(items)?items:[]).map((p,index)=>({
   ...p,
@@ -6036,7 +6501,7 @@ function normalizeStoredProducts(items){
   images:Array.isArray(p.images)&&p.images.length?p.images:(p.image?[p.image]:[]),
   catalogOrder:p.catalogOrder!==undefined && p.catalogOrder!==null && p.catalogOrder!=="" && Number.isFinite(Number(p.catalogOrder)) ? Number(p.catalogOrder) : index
  }));
- return normalizeCatalogOrder(normalized);
+ return normalizeCatalogOrder(applyPendingLocalCatalogOrder(normalized));
 }
 async function hydrateProductsFromDB(){
  if(cloudIsConfigured()){
@@ -6825,7 +7290,10 @@ function renderAdminCatalogOrder(){
   <div class="catalog-order-category-tabs" role="tablist" aria-label="Categorías del catálogo">${categoryTabs}</div>
   <div class="catalog-order-category-head">
    <div><strong>${esc(category)}</strong><small>Organiza únicamente los productos de esta categoría. El orden de las otras categorías no cambiará.</small></div>
-   <button type="button" class="solid-btn" onclick="newProductInCategory('${esc(category)}')">＋ Agregar producto y subir fotos</button>
+   <div class="catalog-order-category-actions">
+    <button type="button" class="outline-btn" onclick="newProductInCategory('${esc(category)}')">＋ Agregar producto y subir fotos</button>
+    <button id="saveCatalogOrderInlineButton" type="button" class="solid-btn" onclick="saveCatalogOrder()" ${catalogOrderSaving?"disabled":""}>${catalogOrderSaving?"Guardando…":"Guardar orden"}</button>
+   </div>
   </div>
   <div class="catalog-order-tip">Añade un producto con sus fotografías y luego ordénalo aquí. Usa las flechas para moverlo al primero o al último, o arrastra la fila. Pulsa «Guardar orden» para publicarlo en la tienda.</div>
   ${ordered.length?ordered.map((p,index)=>`<article class="catalog-order-row" draggable="true" data-order-id="${esc(p.id)}" data-order-category="${esc(category)}" ondragstart="startCatalogDrag(event,'${esc(p.id)}')" ondragover="allowCatalogDrop(event)" ondrop="dropCatalogProduct(event,'${esc(p.id)}')" ondragend="endCatalogDrag(event)">
@@ -6842,6 +7310,7 @@ function renderAdminCatalogOrder(){
    </div>
   </article>`).join(""):'<div class="catalog-order-empty">Todavía no hay productos en '+esc(category)+'. Pulsa «Agregar producto y subir fotos» para comenzar.</div>'}
  `;
+ updateCatalogOrderSaveUI();
 }
 function moveCatalogProduct(id,direction){
  const category=catalogOrderCategory;
@@ -6854,7 +7323,10 @@ function moveCatalogProduct(id,direction){
  else if(direction==="down")to=Math.min(ordered.length-1,from+1);
  if(to===from)return;
  const [item]=ordered.splice(from,1);ordered.splice(to,0,item);
- applyCategoryOrder(category,ordered);persist();renderAdminCatalogOrder();renderProducts();
+ applyCategoryOrder(category,ordered);
+ catalogOrderDirty=true;catalogOrderSaveMessage="Hay cambios pendientes de guardar.";
+ try{writeCatalogOrderSnapshot(true)}catch(err){console.warn("No se pudo crear la copia local del orden",err)}
+ persist();renderAdminCatalogOrder();renderProducts();updateCatalogOrderSaveUI();
 }
 let draggedCatalogProductId="";
 function startCatalogDrag(event,id){
@@ -6870,17 +7342,61 @@ function dropCatalogProduct(event,targetId){
  const category=catalogOrderCategory,ordered=getCategoryOrderedProducts(category);
  const from=ordered.findIndex(p=>String(p.id)===dragged),to=ordered.findIndex(p=>String(p.id)===String(targetId));
  if(from<0||to<0)return;
- const [item]=ordered.splice(from,1);ordered.splice(to,0,item);
- applyCategoryOrder(category,ordered);persist();renderAdminCatalogOrder();renderProducts();
+ const [item]=ordered.splice(from,1);
+ const insertAt=from<to?to-1:to;
+ ordered.splice(Math.max(0,insertAt),0,item);
+ applyCategoryOrder(category,ordered);
+ catalogOrderDirty=true;catalogOrderSaveMessage="Hay cambios pendientes de guardar.";
+ try{writeCatalogOrderSnapshot(true)}catch(err){console.warn("No se pudo crear la copia local del orden",err)}
+ persist();renderAdminCatalogOrder();renderProducts();updateCatalogOrderSaveUI();
  toast("Orden de "+category+" actualizado. Pulsa «Guardar orden» para publicarlo.");
 }
 function endCatalogDrag(event){event.currentTarget.classList.remove("catalog-order-dragging");draggedCatalogProductId=""}
 async function saveCatalogOrder(){
- products=normalizeCatalogOrder(products);persist();renderAdminCatalogOrder();renderProducts();
- if(cloudSession?.access_token){
-  try{await cloudSyncProducts();toast("Orden de las categorías guardado y publicado para todas tus clientas.")}
-  catch(err){toast("Orden guardado en este navegador, pero no se pudo publicar: "+err.message)}
- }else toast("Orden guardado en este navegador. Inicia sesión en Supabase para compartirlo con tus clientas.");
+ if(catalogOrderSaving)return;
+ catalogOrderSaving=true;
+ catalogOrderSaveMessage="Guardando…";
+ updateCatalogOrderSaveUI();
+ try{
+  products=normalizeCatalogOrder(products);
+  /* Copia ligera e inmediata: protege el orden incluso si IndexedDB tarda en terminar. */
+  try{writeCatalogOrderSnapshot(true)}catch(snapshotError){console.warn("No se pudo guardar la copia auxiliar del orden",snapshotError)}
+  persist();
+  /* Espera la escritura real en IndexedDB. Así una recarga inmediata no recupera el orden anterior. */
+  if(productDBReady){
+   await saveProductsToDB(products);
+   const savedRows=await readProductsFromDB();
+   const savedById=new Map(savedRows.map(p=>[String(p.id),p]));
+   const missing=products.find(p=>{
+    const saved=savedById.get(String(p.id));
+    return !saved||Number(saved.categoryOrder)!==Number(p.categoryOrder)||Number(saved.catalogOrder)!==Number(p.catalogOrder);
+   });
+   if(missing)throw new Error("No se pudo verificar el orden local de "+missing.name+". Inténtalo otra vez.");
+  }
+  if(cloudSession?.access_token){
+   await cloudSyncProducts();
+   /* cloudSyncProducts confirma el POST de todos los productos; ahora el orden ya está publicado. */
+   try{writeCatalogOrderSnapshot(false)}catch(snapshotError){console.warn("El orden se publicó, pero no se pudo actualizar la marca local",snapshotError)}
+   catalogOrderDirty=false;
+   catalogOrderSaveMessage="¡Orden publicado correctamente para tus clientas!";
+   toast("¡Orden guardado y publicado en la tienda para todas tus clientas!");
+  }else{
+   catalogOrderDirty=false;
+   catalogOrderSaveMessage="Orden guardado en este dispositivo. Para que tus clientas lo vean, inicia sesión en Supabase y vuelve a guardar.";
+   toast("Orden guardado en este dispositivo. Inicia sesión en Supabase para publicarlo en la tienda.");
+  }
+ }catch(err){
+  catalogOrderDirty=true;
+  catalogOrderSaveMessage="No se pudo completar el guardado. Tu orden local sigue como pendiente.";
+  try{writeCatalogOrderSnapshot(true)}catch(snapshotError){}
+  console.error("Error guardando el orden del catálogo",err);
+  toast("No se pudo guardar el orden: "+(err?.message||err));
+ }finally{
+  catalogOrderSaving=false;
+  renderAdminCatalogOrder();
+  renderProducts();
+  updateCatalogOrderSaveUI();
+ }
 }
 function setOrderStatus(id){const o=orders.find(x=>x.id===id);if(!o)return;const s=prompt("Nuevo estado: Pendiente, Confirmado, Preparando, Enviado o Entregado",o.status);if(s){o.status=s;persist();renderAdmin()}}
 const MAX_PRODUCT_IMAGES=50;
@@ -7522,6 +8038,101 @@ function initStoreMotion(){
  }
 }
 
+</script>
+
+
+<script id="raizProhibidaProfessionalMotionAndSaveV13">
+(function(){
+ "use strict";
+ function initLuxuryScrollProgress(){
+  let bar=document.getElementById("rpLuxuryScrollProgress");
+  if(!bar){
+   bar=document.createElement("div");
+   bar.id="rpLuxuryScrollProgress";
+   bar.setAttribute("aria-hidden","true");
+   document.body.prepend(bar);
+  }
+  let scheduled=false;
+  const update=()=>{
+   const root=document.documentElement;
+   const max=Math.max(1,root.scrollHeight-window.innerHeight);
+   const progress=Math.max(0,Math.min(1,window.scrollY/max));
+   bar.style.transform="scaleX("+progress+")";
+   scheduled=false;
+  };
+  const requestUpdate=()=>{
+   if(scheduled)return;
+   scheduled=true;
+   requestAnimationFrame(update);
+  };
+  window.addEventListener("scroll",requestUpdate,{passive:true});
+  window.addEventListener("resize",requestUpdate,{passive:true});
+  update();
+ }
+ function initLuxuryReveals(){
+  const selectors=[
+   ".benefit",".section-head",".category-card",".toolbar",".chips",
+   ".promo-band",".review-form",".review",".faq-item",".footer-inner",
+   ".admin-product",".catalog-order-row",".stat",".design-admin-section",
+   ".cloud-setup-panel",".visual-editor-panel",".admin-live-card"
+  ];
+  const selectorText=selectors.join(",");
+  let observer=null;
+  if("IntersectionObserver" in window){
+   observer=new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+     if(entry.isIntersecting){
+      entry.target.classList.remove("rp-luxury-pending");
+      entry.target.classList.add("rp-luxury-visible");
+      observer.unobserve(entry.target);
+     }
+    });
+   },{threshold:.08,rootMargin:"0px 0px -4% 0px"});
+  }
+  const attach=(root=document)=>{
+   const found=[];
+   if(root.matches&&root.matches(selectorText))found.push(root);
+   if(root.querySelectorAll)root.querySelectorAll(selectorText).forEach(el=>found.push(el));
+   [...new Set(found)].forEach(el=>{
+    if(el.dataset.rpLuxuryReady==="1")return;
+    el.dataset.rpLuxuryReady="1";
+    el.classList.add("rp-luxury-reveal","rp-luxury-pending");
+    const siblings=el.parentElement?[...el.parentElement.children].filter(node=>node.matches&&node.matches(selectorText)):[];
+    const index=Math.max(0,siblings.indexOf(el));
+    el.style.setProperty("--rp-luxury-delay",Math.min(index,6)*85+"ms");
+    if(observer)observer.observe(el);
+    else{el.classList.remove("rp-luxury-pending");el.classList.add("rp-luxury-visible")}
+   });
+  };
+  attach(document);
+  if("MutationObserver" in window){
+   const mutation=new MutationObserver(records=>{
+    records.forEach(record=>record.addedNodes.forEach(node=>{
+     if(node.nodeType===1)attach(node);
+    }));
+   });
+   mutation.observe(document.body,{childList:true,subtree:true});
+  }
+ }
+ function initLuxuryButtonFeedback(){
+  document.addEventListener("click",event=>{
+   const button=event.target.closest("button,.solid-btn,.outline-btn");
+   if(!button||button.disabled)return;
+   button.classList.remove("rp-luxury-tap");
+   void button.offsetWidth;
+   button.classList.add("rp-luxury-tap");
+   window.setTimeout(()=>button.classList.remove("rp-luxury-tap"),520);
+  },{passive:true});
+ }
+ function boot(){
+  initLuxuryScrollProgress();
+  initLuxuryReveals();
+  initLuxuryButtonFeedback();
+  if(typeof updateCatalogOrderSaveUI==="function")updateCatalogOrderSaveUI();
+ }
+ if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",boot,{once:true});
+ else boot();
+})();
 </script>
 
 </body></html>
